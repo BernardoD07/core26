@@ -6,11 +6,11 @@
 */
 
 :root {
-  --core-amarillo: #d4a413; 
-  --core-naranja: #efb810; 
-  --core-rojo: #f3c332; 
-  --core-morado: #155db1; 
-  --core-azul: #2196f3; 
+  --core-color1: #d4a413; 
+  --core-color2: #efb810; 
+  --core-color3: #f3c332; 
+  --core-color4: #155db1; 
+  --core-color5: #2196f3; 
 
   --core-bt: #16ec66;
   --core-bt2: #56fb93;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: var(--core-azul);
+  background: var(--core-color5);
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: var(--core-naranja);
+  background: var(--core-color2);
   color: #fff;
 }
 .back-to-top.active {
@@ -71,51 +71,14 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #fff;
+
+/* Efecto hover: cuando pasas el mouse encima */
+.btn-regresar-custom:hover {
+  color: #ff9300 !important; /* Cambia a naranja (o el color que quieras) al pasar el mouse */
+  transform: translateY(-2px);
 }
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ff9300;
-  border-top-color: #efefef;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
-}
 
-@-webkit-keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -124,52 +87,17 @@ h1, h2, h3, h4, h5, h6 {
     transition-delay: 0 !important;
   }
 }
-/*--------------------------------------------------------------
-# Top Bar
---------------------------------------------------------------*/
-#topbar {
-  background: var(--core-azul);
-  padding: 8px 0;
-  font-size: 15px;
-  height: 40px;
-  color: white;
-}
-#topbar .contact-info a {
-  line-height: 0;
-  color: white;
-  transition: 0.3s;
-}
-#topbar .contact-info a:hover {
-  color: #f6d146;
-}
-#topbar .contact-info i {
-  color: white;
-  line-height: 0;
-  margin-right: 5px;
-}
-#topbar .contact-info .phone-icon {
-  margin-left: 15px;
-}
-#topbar .social-links a {
-  color: white;
-  padding: 4px 12px;
-  display: inline-block;
-  line-height: 1px;
-  transition: 0.3s;
-}
-#topbar .social-links a:hover {
-  color: #f6d146;
-}
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: linear-gradient(135deg, var(--core-amarillo), var(--core-naranja), var(--core-rojo), var(--core-morado), var(--core-azul));
+  top: 0;
+  background: linear-gradient(135deg, var(--core-color1), var(--core-color2), var(--core-color3), var(--core-color4), var(--core-color5));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 999999;
   position: fixed;
   width: 100%;
   height: 70px;
@@ -213,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--core-bt);
 }
 .navbar #lang-en{
-  background-color: var(--core-morado);
+  background-color: var(--core-color4);
 }
 
 
@@ -354,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  background-color: #000000;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -397,16 +325,19 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  padding-top: 70px;
   width: 100%;
-  height: 110vh;
+  min-height: 110vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/cic-fondo.jpg") top center;
   background-position: center center;
   background-size: cover;
-  position: relative;
+  position:relative;
 }
 #hero:before {
   content: "";
@@ -441,11 +372,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   border: 2px solid #fff;
   color: #fff;
-  background: var(--core-naranja);
+  background: var(--core-color2);
 }
 #hero .btn-get-started:hover {
-  background: var(--core-azul);
-  border-color: var(--core-morado);
+  background: var(--core-color5);
+  border-color: var(--core-color4);
 }
 @media (min-width: 1024px) {
   #hero {
@@ -572,7 +503,7 @@ section {
 
 /* Encabezado Principal */
 .table-core thead {
-    background: linear-gradient(90deg, var(--core-morado), var(--core-azul));
+    background: linear-gradient(90deg, var(--core-color4), var(--core-color5));
     color: white;
 }
 
@@ -582,12 +513,12 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 3px solid var(--core-amarillo);
+    border-bottom: 3px solid var(--core-color1);
 }
 
 /* Separador de Días (Martes, Miércoles...) */
 .row-day-header {
-    background-color: var(--core-morado) !important;
+    background-color: var(--core-color4) !important;
     color: white !important;
 }
 
@@ -601,7 +532,7 @@ section {
 
 /* Bloques de Horario (Fijos en Amarillo) */
 .row-block-header {
-    background-color: var(--core-naranja) !important;
+    background-color: var(--core-color2) !important;
     color: #000 !important;
 }
 
@@ -639,12 +570,12 @@ section {
 
 .card-ponencias .card-header {
     background-color: #fff;
-    border-bottom: 2px solid var(--core-morado);
+    border-bottom: 2px solid var(--core-color4);
     padding: 15px;
 }
 
 .card-ponencias .card-title {
-    color: var(--core-morado);
+    color: var(--core-color4);
     font-weight: 700;
     margin: 0;
 }
@@ -656,22 +587,34 @@ section {
 
 
 .galeria-moderna {
-  padding: 30px 0;
+  margin: 30px auto;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .custom-carousel {
   max-width: 900px;
   margin: 0 auto;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  border: 4px solid var(--core-morado);
 }
 
 .image-wrapper {
   position: relative;
   height: 430px; /* Altura fija para uniformidad */
   overflow: hidden;
+}
+
+.image-wrapper-programaCore{
+  position: relative;
+  height: auto; /* Altura automática */
+  overflow: hidden;
+}
+.image-wrapper-programaCore img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que las fotos se deformen */
 }
 
 .image-wrapper img {
@@ -687,7 +630,6 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(21, 93, 177, 0.4), transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -696,10 +638,10 @@ section {
 
 /* Controles pro */
 .control-btn {
-  background: var(--core-amarillo);
+  background: var(--core-color2);
   color: #000;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -718,12 +660,12 @@ section {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--core-azul);
+  background-color: var(--core-color5);
   margin: 0 5px;
 }
 
 .carousel-indicators .active {
-  background-color: var(--core-amarillo);
+  background-color: var(--core-color2);
 }
 
 
@@ -796,17 +738,8 @@ section {
   box-shadow: none;
 }
 
-.modal-header{
-  /* background: black;
-  color: white;
-  border: #ff9300;
-  border-width: 1px;
-  border-style: inset; */
-}
 
-.modal-header .btn-close{
-  /* color: white; */
-}
+
 
 #topicModal .modal-body ul {
   list-style: none;
@@ -1242,35 +1175,31 @@ section {
   color: #112442;
 }
 .card {
+  margin-bottom: 100px;
   height: 100%;
+
 }
 .card-body {
   height: calc(100% - 56px);
 }
-.card:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s;
-}
+
 
 
 .color-principal {
-  background: var(--core-naranja);
+  background: var(--core-color2);
   color: white;
 }
 .color-principal:hover {
-  background: var(--core-rojo);
+  background: var(--core-color3);
 }
 .card-animada {
-  background: linear-gradient(135deg, var(--core-amarillo), var(--core-naranja));
+  background: linear-gradient(135deg, var(--core-color1), var(--core-color2));
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
   color: #333;
   transition: transform 0.3s;
 }
-.card-animada:hover {
-  transform: scale(1.05);
-   
-}
+
 
 
 /* End Talleres */
@@ -1577,7 +1506,7 @@ contact .info-box a {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: linear-gradient(to right, var(--core-azul), var(--core-morado));
+  background: linear-gradient(to right, var(--core-color5), var(--core-color4));
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -1839,7 +1768,7 @@ contact .info-box a {
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 4px solid var(--core-amarillo);
+  border-bottom: 4px solid var(--core-color1);
 }
 
 .comite .member h4 {
@@ -1899,11 +1828,11 @@ contact .info-box a {
 .btn-language.active {
   color: #fff;
   font-weight: bold;
-  background-color: var(--core-naranja);
+  background-color: var(--core-color2);
 }
 
 .btn-language:hover {
-  background-color: var(--core-amarillo);
+  background-color: var(--core-color1);
   color: #333;
   transform: translateY(-2px);
 }
@@ -1960,13 +1889,13 @@ contact .info-box a {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--core-naranja);
+  color: var(--core-color2);
   font-weight: bold;
 }
 
 .programa .btn-primary {
-  background-color: var(--core-naranja);
-  border-color: var(--core-naranja);
+  background-color: var(--core-color2);
+  border-color: var(--core-color2);
   padding: 10px 25px;
   border-radius: 50px;
   font-weight: 600;
@@ -1974,8 +1903,8 @@ contact .info-box a {
 }
 
 .programa .btn-primary:hover {
-  background-color: var(--core-amarillo);
-  border-color: var(--core-amarillo);
+  background-color: var(--core-color1);
+  border-color: var(--core-color1);
   color: #333;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(230, 13, 49, 0.3);
@@ -2059,7 +1988,7 @@ contact .info-box a {
 
 .sponsor-contact-info a {
   font-weight: bold;
-  color: var(--core-naranja);
+  color: var(--core-color2);
 }
 
 .sponsor-levels {
@@ -2090,7 +2019,7 @@ contact .info-box a {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: var(--core-naranja);
+  color: var(--core-color2);
 }
 
 .sponsor-level ul {
@@ -2111,7 +2040,7 @@ contact .info-box a {
   position: absolute;
   left: 0;
   top: 5px;
-  color: var(--core-naranja);
+  color: var(--core-color2);
 }
 
 .sponsor-level.platinum {
@@ -2131,8 +2060,8 @@ contact .info-box a {
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
-  background-color: var(--core-naranja);
-  border-color: var(--core-naranja);
+  background-color: var(--core-color2);
+  border-color: var(--core-color2);
   color: white;
   display: inline-flex;
   align-items: center;
@@ -2140,8 +2069,8 @@ contact .info-box a {
 }
 
 .download-btn:hover {
-  background-color: var(--core-amarillo);
-  border-color: var(--core-amarillo);
+  background-color: var(--core-color1);
+  border-color: var(--core-color1);
   color: #333;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(230, 13, 49, 0.3);
@@ -2175,7 +2104,7 @@ contact .info-box a {
   right: 0;
   font-weight: bold;
   font-size: 14px;
-  color: var(--core-azul);
+  color: var(--core-color5);
   display: flex;
   flex-direction: column;
   align-items: center;

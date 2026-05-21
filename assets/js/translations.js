@@ -68,6 +68,10 @@ const translations = {
     'es': 'Inicio',
     'en': 'Home'
   },
+  'nav_back': {
+    'es': 'Regresar',
+    'en': 'Back'
+  },
   'nav_welcome': {
     'es': 'Bienvenida',
     'en': 'Welcome'
@@ -105,12 +109,12 @@ const translations = {
     'en': 'More information'
   },
   'hero_workshops_date': {
-    'es': 'Talleres. 21 al 24 de octubre de 2025.',
-    'en': 'Workshops. October 21-24, 2025.'
+    'es': 'Talleres. 19 al 23 de octubre de 2026.',
+    'en': 'Workshops. October 19-23, 2026.'
   },
   'hero_talks_date': {
-    'es': 'Ponencias. 27 al 30 de octubre de 2025.',
-    'en': 'Presentations. October 27-30, 2025.'
+    'es': 'Congreso. 26 al 29 de octubre de 2026.',
+    'en': 'Congress. October 26-29, 2026.'
   },
   'about_title': {
     'es': 'El congreso CORE 2026',
@@ -137,8 +141,8 @@ const translations = {
     'en': 'Stay up to date with our latest news and events. Follow us and be part of our Facebook community!'
   },
   'facebook_button': {
-    'es': 'CORE2025 en Facebook',
-    'en': 'CORE2025 on Facebook'
+    'es': 'CORE2026 en Facebook',
+    'en': 'CORE2026 on Facebook'
   },
   // Continuar con todas las traducciones para las ponencias
   'ponencias_title': {
@@ -481,8 +485,8 @@ const translations = {
     'en': 'Sponsors and Partners'
   },
   'sponsors_description': {
-    'es': 'Agradecemos a nuestros patrocinadores por su valioso apoyo al Congreso CORE 2025',
-    'en': 'We thank our sponsors for their valuable support to the CORE 2025 Congress'
+    'es': 'Agradecemos a nuestros patrocinadores por su valioso apoyo al Congreso CORE 2026',
+    'en': 'We thank our sponsors for their valuable support to the CORE 2026 Congress'
   },
   'sponsors_coming_soon': {
     'es': 'Próximamente se anunciarán los patrocinadores del evento',
@@ -493,12 +497,12 @@ const translations = {
     'en': 'Interested in becoming a sponsor?'
   },
   'sponsor_contact': {
-    'es': 'Para información sobre cómo convertirse en patrocinador del Congreso CORE 2025, por favor contacte a: core@cic.ipn.mx',
-    'en': 'For information on how to become a sponsor of the CORE 2025 Congress, please contact: core@cic.ipn.mx'
+    'es': 'Para información sobre cómo convertirse en patrocinador del Congreso CORE 2026, por favor contacte a: core@cic.ipn.mx',
+    'en': 'For information on how to become a sponsor of the CORE 2026 Congress, please contact: core@cic.ipn.mx'
   },
   'sponsor_info': {
-    'es': 'El Congreso Internacional de Ciencias de la Computación CORE 2025 es un evento estudiantil del Instituto Politécnico Nacional que se celebrará del 28 al 31 de octubre de 2025 en Ciudad de México. En su 24ª edición, este congreso se enfoca en la sostenibilidad y el papel de las ciencias computacionales, especialmente la Inteligencia Artificial, en el desarrollo sostenible. Se esperan alrededor de 300 participantes y la presentación de aproximadamente 55 trabajos entre presentaciones orales y pósters. CORE 2025 ofrece tres niveles de patrocinio (Platino: $50,000, Oro: $20,000 y Plata: $10,000) con beneficios que incluyen desde presencia de marca hasta espacios de exhibición y presentaciones promocionales. Los interesados en patrocinar deben contactar al comité organizador antes del 10 de agosto de 2025 mediante el correo core@cic.ipn.mx.',
-    'en': 'The International Congress of Computer Science CORE 2025 is a student-led event by the National Polytechnic Institute taking place from October 28-31, 2025, in Mexico City. In its 24th edition, this congress focuses on sustainability and the role of computer sciences, especially Artificial Intelligence, in sustainable development. Around 300 participants are expected, with approximately 55 papers to be presented through oral presentations and posters. CORE 2025 offers three sponsorship levels (Platinum: $50,000, Gold: $20,000, and Silver: $10,000) with benefits ranging from brand presence to exhibition spaces and promotional presentations. Those interested in sponsoring should contact the organizing committee before August 10, 2025, via email at core@cic.ipn.mx.'
+    'es': 'El Congreso Internacional de Ciencias de la Computación CORE 2026 es un evento estudiantil del Instituto Politécnico Nacional que se celebrará del 28 al 31 de octubre de 2026 en Ciudad de México. En su 24ª edición, este congreso se enfoca en la sostenibilidad y el papel de las ciencias computacionales, especialmente la Inteligencia Artificial, en el desarrollo sostenible. Se esperan alrededor de 300 participantes y la presentación de aproximadamente 55 trabajos entre presentaciones orales y pósters. CORE 2026 ofrece tres niveles de patrocinio (Platino: $50,000, Oro: $20,000 y Plata: $10,000) con beneficios que incluyen desde presencia de marca hasta espacios de exhibición y presentaciones promocionales. Los interesados en patrocinar deben contactar al comité organizador antes del 10 de agosto de 2026 mediante el correo core@cic.ipn.mx.',
+    'en': 'The International Congress of Computer Science CORE 2026 is a student-led event by the National Polytechnic Institute taking place from October 28-31, 2026, in Mexico City. In its 24th edition, this congress focuses on sustainability and the role of computer sciences, especially Artificial Intelligence, in sustainable development. Around 300 participants are expected, with approximately 55 papers to be presented through oral presentations and posters. CORE 2026 offers three sponsorship levels (Platinum: $50,000, Gold: $20,000, and Silver: $10,000) with benefits ranging from brand presence to exhibition spaces and promotional presentations. Those interested in sponsoring should contact the organizing committee before August 10, 2026, via email at core@cic.ipn.mx.'
   },
   'download_sponsor_info': {
     'es': 'Descargar información para patrocinadores',
