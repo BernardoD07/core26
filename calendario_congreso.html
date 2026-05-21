@@ -38,32 +38,187 @@
 
         <!-- ======= Header ======= -->
         <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
+            <div class="container d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-            <h1 class="logo me-3"><a href="index.html"><img src="assets/img/core2026logo.png" class="img-fluid" alt="CORE 2026"></a></h1>
+                <h1 class="logo me-3"><a href="index.html"><img src="assets/img/core2026logo.png" class="img-fluid" alt="CORE 2026"></a></h1>
             <!--  <h1 class="logo me-3"><a href="index.php"><img src="assets/img/logo-smia.png" class="img-fluid" alt="SMIA"></a></h1> -->
-            <a href="index.html" class="logo"><img src="assets/img/CIC-LOGOblanco.png" alt="Logo CIC" class="img-fluid"></a>
+                <a href="index.html" class="logo"><img src="assets/img/CIC-LOGOblanco.png" alt="Logo CIC" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar">
-            <ul>
-                <li>
-                    <a class="btn-regresar-custom" href="index.html" data-translate="nav_back">
-                        <span class="icono-regresar-custom"></span> Regresar
-                    </a>
-                </li>
+                <ul>
+                <li><a class="nav-link scrollto active" href="index.html" data-translate="nav_home">Inicio</a></li>
+                <li><a class="nav-link scrollto" href="index.html#about" data-translate="nav_welcome">Bienvenida</a></li>
+                <li><a class="nav-link scrollto" href="convocatorias.html" data-translate="nav_calls">Convocatorias</a></li>
+                <li><a class="nav-link scrollto" href="calendario_talleres.html" data-translate="nav_workshops">Talleres</a></li>
+                <li><a class="nav-link scrollto" href="calendario_congreso.html" data-translate="nav_conferences">Conferencias</a></li>
+                <li><a class="nav-link scrollto" href="galeria.html" data-translate="nav_gallery">Galeria</a></li>
+                <li><a class="nav-link scrollto" href="patrocinadores.html" data-translate="nav_costs">Patrocinadores</a></li>
+                <li><a class="nav-link scrollto" href="comite_organizador.html" data-translate="nav_committee">Comité</a></li>
                 <div class="language-selector me-3">
-                <button id="lang-es" class="btn-language active"><i class="bi bi-globe2"></i> ES</button>
-                <button id="lang-en" class="btn-language"><i class="bi bi-translate"></i> EN</button>
+                    <button id="lang-es" class="btn-language active"><i class="bi bi-globe2"></i> ES</button>
+                    <button id="lang-en" class="btn-language"><i class="bi bi-translate"></i> EN</button>
                 </div>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-        </div>
-        </header><!-- End Header -->
-
+            </div>
+        </header>
+        <!-- End Header -->
     
         <main>
+            <!-- ======= Ponencias Section ======= -->
+            <section id="ponencias" class="ponencias section-bg">
+            <div class="container">
+                <div class="section-title">
+                <h2>Ponencias</h2>
+                <p>Conoce los diferentes tipos de presentaciones y actividades académicas de nuestro congreso</p>
+                </div>
+
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="row ponencias-container">
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-mic"></i> <span data-translate="conferencia_magistral">Conferencia magistral</span></h5>
+                            <p class="card-text" data-translate="conferencia_text">
+                            Impartida por una investigadora o investigador invitado al CIC, en la que durante aproximadamente entre 40 y 60 minutos podrá presentar un tema relevante relacionado con las LGAC del centro. Estas conferencias permiten que los asistentes al congreso conozcan investigaciones desarrolladas por expertos en el área de la ingeniería y la computación, e incluso entablar posibles colaboraciones.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-person-video3"></i> <span data-translate="ponencia_title">Ponencia</span></h5>
+                            <p class="card-text" data-translate="ponencia_text">
+                            Son presentaciones de aproximadamente 20 minutos (15 minutos de presentación y 5 de preguntas), en las que jóvenes investigadores, estudiantes, y profesores de nivel Superior y Posgrado describen algún proyecto y los avances que tienen en el mismo, con la finalidad de darle difusión a su trabajo y recibir retroalimentación.
+                            </p>
+                            <p class="card-text">
+                            Para que un artículo sea aceptado debe ser enviado en las fechas propuestas al sistema EASY CHAIR, mismo que permite llevar a cabo un proceso de revisión de doble ciego garantizando la calidad de los artículos. Se espera que sean aceptados por los revisores del congreso al menos 21 artículos de investigación que serán publicados en las memorias del congreso CORE2026, editadas y publicadas por la revista Research in Computing Science del IPN.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-people"></i> <span data-translate="panel_discusion">Panel de discusión</span></h5>
+                            <p class="card-text" data-translate="panel_text">
+                            Mesas redondas en las que al menos 4 especialistas de algún tema sobre las LGAC del centro, dirigidos por un moderador, platican con el público, generando una lluvia de ideas y conocimiento general.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-laptop"></i> <span data-translate="proyecto_cic">Presentación de proyecto CIC</span></h5>
+                            <p class="card-text" data-translate="proyecto_text">
+                            En un espacio de 30 minutos, investigadores y alumnos del CIC tendrán la oportunidad de presentar algún proyecto en el que estén trabajando con la comunidad del CIC.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-easel"></i> <span data-translate="posters">Sesión de posters</span></h5>
+                            <p class="card-text" data-translate="posters_text">
+                            En el primer piso del CIC se colocarán 10 posters en los que se presentarán trabajos de estudiantes para darles divulgación. Los posters deberán cumplir con las características solicitadas en la correspondiente convocatoria.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 ponencia-item">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-building"></i> <span data-translate="open_labs">OPEN LABS</span></h5>
+                            <!--
+                            <p class="card-text" data-translate="open_labs_text">
+                            </p>
+                            -->
+                        </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+                </div>
+                <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card card-ponencias">
+                    <div class="card-header">
+                        <h3 class="card-title text-center">Información Detallada de Ponencias</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive-container">
+                        <table class="table-core">
+                            <thead>
+                            <tr>
+                                <th>Bloque/Día <div class="header-line"></div></th>
+                                <th>Horario <div class="header-line"></div></th>
+                                <th>Ponencia <div class="header-line"></div></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="row-day-header">
+                                <td colspan="3">📅 (día-fecha) octubre</td>
+                            </tr>
+                            <tr class="row-block-header">
+                                <td class="block-badge">Block 1</td>
+                                <td>...</td>
+                                <td class="paper-title">...</td>
+                            </tr>
+                            <tr class="row-content">
+                                <td></td>
+                                <td></td>
+                                <td class="paper-title">...</td>
+                            </tr>
+                            <tr class="row-content">
+                                <td></td>
+                                <td></td>
+                                <td class="paper-title">...</td>
+                            </tr>
+
+                            <tr class="row-block-header">
+                                <td class="block-badge">Block 2</td>
+                                <td>...</td>
+                                <td class="paper-title">...</td>
+                            </tr>
+                            <tr class="row-content">
+                                <td></td>
+                                <td></td>
+                                <td class="paper-title">...</td>
+                            </tr>
+
+                            <tr class="row-day-header">
+                                <td colspan="3">📅 (día - fecha) octubre</td>
+                            </tr>
+                            <tr class="row-block-header">
+                                <td class="block-badge">Block 3</td>
+                                <td>...</td>
+                                <td class="paper-title">...</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+            </section>
+            <!-- Fin Ponencias Section -->
+
             <!-- ======= Calendario del Congreso ======= -->
             <section id="calendario-congreso" class="calendario-congreso">
                 <div class="container">
@@ -657,58 +812,13 @@
 
         </main>
 
-        <!-- ======= Footer ======= -->
-        <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6">
-                <div class="footer-info">
-                    <img src="assets/img/CIC-LOGOblanco.png" alt="algo" class="logo-footer img-fluid">
-                    <div class="social-links mt-3">
-                    <!--  <a href="https://mobile.twitter.com/CIC_IPN_OFICIAL" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-                    <a href="https://www.facebook.com/share/pXFpfvjrFjuowWLV/?mibextid=LQQJ4d" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <!--<a href="https://www.instagram.com/cicipn/" class="instagram"><i class="bx bxl-instagram"></i></a> -->
-                    <!--<a href="https://www.linkedin.com/in/cic-ipn/" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
-                    <a href="https://www.youtube.com/results?search_query=CIC+IPN" class="youtube"><i class="bx bxl-youtube"></i></a>
-                    
-                    </div>
-                </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6 footer-links">
-                <h4 data-translate="footer_links">Links</h4>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="https://www.cic.ipn.mx/" data-translate="footer_cic">CIC-IPN</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="https://www.rcs.cic.ipn.mx" data-translate="footer_rcs">Research in Computing Science</a></li>
-                </ul>
-                <div class="footer-venue mt-3">
-                    <strong>Sede:</strong> Centro de Investigación en Computación, Instituto Politécnico Nacional, Ciudad de México
-                    <br>
-                    <span style="font-size: 0.95em;">
-                    <strong>Venue:</strong> Miguel Othón de Mendizábal SN, Col. La Escalera, C.P. 07320
-                    </span>
-                </div>
-                </div>
-
-                <!-- Nueva sección para la imagen de Springer -->
-                <div class="col-lg-6 col-md-12 text-center">
-                <!--  <img src="assets/img/springer.jpg" alt="Springer" class="img-fluid" style="max-width: 100%; height: auto;"> -->
-                <img src="assets/img/springer-logo-white.jpg" alt="Springer" class="img-fluid" style="max-width: 100%; height: auto;">
-        
-                </div>
-            </div>
-            </div>
-        </div>
-        </footer><!-- End Footer -->
     </body>
 
     <!-- Template Main JS File -->
-        <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
-        <!-- Language Translation JS File -->
-        <script src="assets/js/translations.js"></script>
+    <!-- Language Translation JS File -->
+    <script src="assets/js/translations.js"></script>
 
 </html>
 
