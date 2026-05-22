@@ -92,9 +92,9 @@ const translations = {
     'es': 'Galeria',
     'en': 'Gallery'
   },
-  'nav_costs': {
-    'es': 'Costos',
-    'en': 'Costs'
+  'nav_sponsors': {
+    'es': 'Patrocinadores',
+    'en': 'Sponsors'
   },
   'nav_committee': {
     'es': 'Comité',

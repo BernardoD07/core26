@@ -28,7 +28,7 @@ body {
   color: #112442;
 }
 
-a {
+a{
   color: #ff9300;
   text-decoration: none;
 }
@@ -40,6 +40,10 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+
+.convocatoria,.programa,.ponencias,.galeria-moderna,.sponsors,.comite{
+  padding-top: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -331,22 +335,13 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  padding-top: 70px;
+  margin-top: 40px;
   width: 100%;
   min-height: 110vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/cic-fondo.jpg") top center;
   background-position: center center;
   background-size: cover;
   position:relative;
-}
-#hero:before {
-  content: "";
- 
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 #hero h1 {
   margin: 0 0 10px 0;
@@ -406,39 +401,23 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
   overflow: hidden;
-  margin-top: -40px;
-  padding-top: 40px;
+  margin-top: 70px;
 }
 
 .section-title {
   text-align: center;
-  padding: 30px 0;
   position: relative;
 }
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 0;
   color: #191919;
   position: relative;
   z-index: 2;
 }
-.section-title span {
-  position: absolute;
-  top: 30px;
-  color: #f4f4f4;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  font-weight: 700;
-  font-size: 52px;
-  text-transform: uppercase;
-  line-height: 0;
-}
+
 .section-title p {
   margin-bottom: 0;
   position: relative;
@@ -449,9 +428,7 @@ section {
     font-size: 28px;
     margin-bottom: 15px;
   }
-  .section-title span {
-    font-size: 38px;
-  }
+
 }
 
 .texto-inicio {
@@ -586,12 +563,6 @@ section {
 --------------------------------------------------------------*/
 
 
-.galeria-moderna {
-  margin: 30px auto;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
 .custom-carousel {
   max-width: 900px;
   margin: 0 auto;
@@ -623,18 +594,7 @@ section {
   object-fit: cover; /* Evita que las fotos se deformen */
 }
 
-/* Overlay elegante al estilo del 30 aniversario */
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
+
 
 /* Controles pro */
 .control-btn {
@@ -698,8 +658,6 @@ section {
 }
 
 
-
-
 .convocatoria h3{
   text-align: center;
   padding: 10px 30px 10px 30px;
@@ -709,7 +667,6 @@ section {
 .convocatoria .box{
   padding: 15px 5px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
 }
 
 .convocatoria .box h5{
@@ -1077,7 +1034,6 @@ section {
 # Members
 --------------------------------------------------------------*/
 .members .comments-avatar {
-    margin-top: 25px;
     margin-left: 22px;
     margin-bottom: 25px;
 }
@@ -1171,9 +1127,7 @@ section {
 
 
  
-.section-title {
-  color: #112442;
-}
+
 .card {
   margin-bottom: 100px;
   height: 100%;
@@ -1304,10 +1258,6 @@ section {
   color: #ff9300;
 }
 
-.pricing-account{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 
 /*--------------------------------------------------------------
 # Team
@@ -1757,7 +1707,6 @@ contact .info-box a {
 # Comité Organizador
 --------------------------------------------------------------*/
 .comite {
-  padding: 60px 0;
   background: #f8f9fa;
 }
 
@@ -1853,7 +1802,6 @@ contact .info-box a {
 
 /* Estilo para la sección de programa y call for papers */
 .programa {
-  padding: 80px 0;
   position: relative;
   background-color: #f9f9f9;
 }
@@ -1912,7 +1860,6 @@ contact .info-box a {
 
 /* Estilos para la sección de sponsors */
 .sponsors {
-  padding: 80px 0;
   background-color: #f8f9fa;
   position: relative;
 }
