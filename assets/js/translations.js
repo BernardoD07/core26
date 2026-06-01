@@ -121,8 +121,8 @@ const translations = {
     'en': 'The CORE 2026 congress'
   },
   'about_p1': {
-    'es': 'El congreso CORE 2026, es la continuación de una tradición de 24 años, en la que la comunidad del Centro de Investigación en Computación (CIC) participa arduamente. En esta nueva emisión, el Congreso CORE se centra en temas relacionados a la sustentabilidad y la incorporación de las ciencias de la computación en su desarrollo.',
-    'en': 'The CORE 2026 congress is the continuation of a 24-year tradition, in which the Computing Research Center (CIC) community actively participates. In this new edition, the CORE Congress focuses on topics related to sustainability and the incorporation of computer science in its development.'
+    'es': 'El congreso CORE 2026, es la continuación de una tradición de 25 años, en la que la comunidad del Centro de Investigación en Computación (CIC) participa arduamente. En esta nueva emisión, el Congreso CORE se centra en temas relacionados a la sustentabilidad y la incorporación de las ciencias de la computación en su desarrollo.',
+    'en': 'The CORE 2026 congress is the continuation of a 25-year tradition, in which the Computing Research Center (CIC) community actively participates. In this new edition, the CORE Congress focuses on topics related to sustainability and the incorporation of computer science in its development.'
   },
   'about_p2': {
     'es': 'El propósito es dar a conocer avances realizados en el área de las Tecnologías de la Información y la Comunicación, la Inteligencia Artificial y la Computación en general, relacionados con la sustentabilidad, estudio y cuidado del ambiente, además de desarrollos tecnológicos e investigaciones que se realizan dentro del área de la Computación.',
@@ -540,10 +540,6 @@ const translations = {
   'sponsor_deadline': {
     'es': 'Fecha límite para patrocinio: 10 de agosto de 2026',
     'en': 'Sponsorship deadline: August 10, 2026'
-  },
-  'mascot_name': {
-    'es': 'Core Leone',
-    'en': 'Core Leone'
   },
   'mascot_title': {
     'es': 'Mascota Oficial',
