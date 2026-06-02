@@ -2076,12 +2076,6 @@ contact .info-box a {
   transition: opacity 0.3s ease, bottom 0.3s ease;
 }
 
-/* Interacciones al hacer Hover */
-.mascot-container:hover {
-  /* Al pasar el mouse, simula que la catarina reacciona abriendo un poco las alas (escala) */
-  transform: scale(1.05);
-  animation-play-state: paused; /* Pausa la animación pesada para que no estorbe al interactuar */
-}
 
 .mascot-container:hover .mascot-image {
   filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.35));
