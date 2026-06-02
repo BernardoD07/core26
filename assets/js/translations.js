@@ -117,20 +117,24 @@ const translations = {
     'en': 'Congress. October 26-29, 2026.'
   },
   'about_title': {
-    'es': 'El congreso CORE 2026',
-    'en': 'The CORE 2026 congress'
+    'es': 'Acerca de CORE 2026',
+    'en': 'About CORE 2026'
   },
   'about_p1': {
-    'es': 'El congreso CORE 2026, es la continuación de una tradición de 25 años, en la que la comunidad del Centro de Investigación en Computación (CIC) participa arduamente. En esta nueva emisión, el Congreso CORE se centra en temas relacionados a la sustentabilidad y la incorporación de las ciencias de la computación en su desarrollo.',
-    'en': 'The CORE 2026 congress is the continuation of a 25-year tradition, in which the Computing Research Center (CIC) community actively participates. In this new edition, the CORE Congress focuses on topics related to sustainability and the incorporation of computer science in its development.'
+    'es': 'El Congreso CORE 2026 es la continuación de una tradición de 26 años en la que la comunidad del Centro de Investigación en Computación (CIC) participa activamente para promover el intercambio de conocimientos, la divulgación científica y la vinculación entre estudiantes, investigadores, académicos y profesionales del sector tecnológico.',
+    'en': 'The CORE 2026 Congress is the continuation of a 26-year tradition in which the Computing Research Center (CIC) community actively participates to promote knowledge exchange, scientific dissemination, and collaboration among students, researchers, academics, and professionals in the technology sector.'
   },
   'about_p2': {
-    'es': 'El propósito es dar a conocer avances realizados en el área de las Tecnologías de la Información y la Comunicación, la Inteligencia Artificial y la Computación en general, relacionados con la sustentabilidad, estudio y cuidado del ambiente, además de desarrollos tecnológicos e investigaciones que se realizan dentro del área de la Computación.',
-    'en': 'The purpose is to share advances in the area of Information and Communication Technologies, Artificial Intelligence and Computing in general, related to sustainability, environmental study and care, as well as technological developments and research carried out within the Computing field.'
+    'es': 'En esta edición, bajo el tema “IA y Supercómputo: el motor del futuro tecnológico”, el congreso explora la estrecha relación entre la inteligencia artificial y el supercómputo, abordando el papel fundamental que desempeñan la computación de alto rendimiento, el procesamiento masivo de datos y las infraestructuras especializadas en el desarrollo de tecnologías inteligentes. ',
+    'en': 'In this edition, under the theme "AI and Supercomputing: the engine of the technological future", the congress explores the close relationship between artificial intelligence and supercomputing, addressing the fundamental role played by high-performance computing, massive data processing and specialized infrastructures in the development of intelligent technologies.'
   },
   'about_p3': {
-    'es': 'El congreso CORE 2026 busca como sus antecesores la inclusión de todos los miembros de la comunidad, y la equidad de género. Para ello contará con un panel de discusión de mujeres que desarrollan proyectos enfocados a la sustentabilidad.',
-    'en': 'The CORE 2026 congress, like its predecessors, seeks the inclusion of all community members and gender equity. To this end, it will feature a panel discussion with women who develop projects focused on sustainability.'
+    'es': 'CORE 2026 busca generar un espacio de aprendizaje, análisis y discusión sobre los avances, aplicaciones y desafíos de la inteligencia artificial, así como sobre las capacidades de supercómputo que hacen posible el entrenamiento y la ejecución de modelos cada vez más complejos. A través de conferencias, paneles de discusión, talleres y actividades académicas, los asistentes podrán conocer las tendencias actuales, los retos tecnológicos y las oportunidades de innovación que están definiendo el futuro de la computación.',
+    'en': 'CORE 2026 aims to create a space for learning, analysis, and discussion about the advances, applications, and challenges of artificial intelligence, as well as the supercomputing capabilities that enable the training and execution of increasingly complex models. Through conferences, panel discussions, workshops, and academic activities, attendees will learn about current trends, technological challenges, and innovation opportunities that are shaping the future of computing.'
+  },
+  'about_p4': {
+    'es': 'Asimismo, el congreso servirá como plataforma para difundir proyectos de investigación y desarrollos tecnológicos realizados por la comunidad científica, promoviendo el intercambio de experiencias y la colaboración entre distintos sectores.',
+    'en': 'Likewise, the congress will serve as a platform to disseminate research projects and technological developments carried out by the scientific community, promoting the exchange of experiences and collaboration between different sectors.'
   },
   'facebook_title': {
     'es': '¡Síguenos en Facebook!',
