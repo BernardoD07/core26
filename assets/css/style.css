@@ -331,6 +331,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -2109,7 +2110,7 @@ contact .info-box a {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .mascot-container {
     position: relative;
     bottom: auto;
