@@ -2044,7 +2044,7 @@ contact .info-box a {
 /* Estilos para la mascota */
 .mascot-container {
   position: absolute;
-  bottom: 30px; /* Bajado un poco para dar más espacio arriba */
+  bottom: 60px; /* Bajado un poco para dar más espacio arriba */
   right: 30px;
   z-index: 10;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -2053,7 +2053,6 @@ contact .info-box a {
 }
 
 .mascot-image {
-  /* Hacemos la mascota más grande (de 180px a 240px) */
   max-height: 240px; 
   width: auto;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
@@ -2066,7 +2065,6 @@ contact .info-box a {
   padding: 6px 16px;
   position: absolute;
   /* Movido más abajo: se posiciona saliéndose del contenedor por debajo */
-  bottom: -35px; 
   left: 50%;
   transform: translateX(-50%); /* Centrado perfectamente respecto a la mascota */
   font-weight: bold;
@@ -2087,7 +2085,6 @@ contact .info-box a {
 
 .mascot-container:hover .mascot-caption {
   opacity: 1;
-  bottom: -25px; /* Sube sutilmente al aparecer */
 }
 
 @keyframes ladybug-behavior {
@@ -2118,8 +2115,6 @@ contact .info-box a {
     position: relative;
     bottom: auto;
     right: auto;
-    margin-top: 40px;
-    margin-bottom: 40px; /* Margen extra abajo por el caption */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2132,10 +2127,8 @@ contact .info-box a {
   
   .mascot-caption {
     position: relative;
-    bottom: auto;
     left: auto;
     transform: none;
-    margin-top: 15px; /* Separación limpia debajo de la imagen */
     opacity: 1; /* Siempre visible en móviles ya que no hay hover */
   }
 }
