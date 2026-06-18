@@ -460,16 +460,6 @@ section {
 
 }
 
-#carouselExampleIndicators {
-  max-width: 900px; /* Ajusta el ancho del carrusel */
-  margin: auto; /* Centra el carrusel horizontalmente */
-}
-.carousel-inner img {
-  width: 100%;
-  height: 500px; /* Ajusta la altura del carrusel */
-  object-fit: cover; /* Mantén la relación de aspecto de las imágenes */
-}
-
 
 /*--------------------------------------------------------------
 # Diseño de las tablas
@@ -572,42 +562,31 @@ section {
 
 
 /*--------------------------------------------------------------
-# Galería moderna
+# Carrusel 
 --------------------------------------------------------------*/
 
-
+/* El carrusel principal ahora es el que manda sobre el tamaño */
 .custom-carousel {
-  max-width: 900px;
+  width: 100%;
+  max-width: 600px; /*  Aquí se ajusta el ancho máximo del carrusel */
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.image-wrapper {
+/* El contenedor interno ya no necesita limitar el ancho, solo deja pasar la info */
+.image-wrapper-programaCore {
   position: relative;
-  height: 430px; /* Altura fija para uniformidad */
-  overflow: hidden;
-}
-
-.image-wrapper-programaCore{
-  position: relative;
-  height: auto; /* Altura automática */
-  overflow: hidden;
-}
-.image-wrapper-programaCore img{
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Evita que las fotos se deformen */
 }
 
-.image-wrapper img {
+/* La imagen hereda el ancho, mantiene su proporción y NO se deforma ni se corta */
+.image-wrapper-programaCore img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Evita que las fotos se deformen */
+  height: auto;
+  display: block;
+  object-fit: contain; /* Asegura que se respete la proporción original del flyer */
 }
-
-
 
 /* Controles pro */
 .control-btn {
@@ -641,7 +620,32 @@ section {
   background-color: var(--core-color2);
 }
 
+/*--------------------------------------------------------------
+# Galería
+--------------------------------------------------------------*/
 
+.galeria-carousel {
+  width: 100%;
+  max-width: 900px; /* Se mantendrá al tamaño ideal de fotos de 700px */
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Contenedor interno de las fotos de la galería */
+.image-wrapper-galeria {
+  position: relative;
+  width: 100%;
+  height: 410px; 
+  overflow: hidden;
+}
+
+/* Formato para que las fotos de la galería no se deformen ni se pinchen */
+.image-wrapper-galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 
@@ -1043,78 +1047,6 @@ section {
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# Members
---------------------------------------------------------------*/
-.members .comments-avatar {
-    margin-left: 22px;
-    margin-bottom: 25px;
-}
-.members .comments-avatar .commens-name {
-    font-weight: 600;
-    font-size: 14px;
-}
-.members .comments-avatar img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.text-bg-work{
-  background-color: #ff9300
-}
-
-.text-bg-ipn{
-  background-color: #6C1D45;
-}
-
-.text-bg-generic{
-  background-color: #576DFF;
-}
-
-.text-bg-egre{
-  background-color: #51A53C;
-}
-
-.accordion-custom{
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1.25rem;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
-  border: 0;
-  border-radius: 0;
-  overflow-anchor: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,border-radius .15s ease;
-}
-.accordion-custom:not(.collapsed)::after{
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff9300'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  transform: rotate(-180deg);
-}
-
-.accordion-custom::after{
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: auto;
-  content: "";
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-size: 1.25rem;
-  transition: transform .2s ease-in-out;
-}
-
-.accordion-custom:not(.collapsed){
-  border: 1.5px dashed #ff9300;
-}
-
-
-
 /* Talleres */
 
 .principal {
@@ -1138,8 +1070,6 @@ section {
 .taller11 { background-color: #b7dde8; }
 .taller12 { background-color: #d7e4bd; }
 
-
- 
 
 .card {
   margin-bottom: 100px;
@@ -1173,150 +1103,7 @@ section {
 
 
 
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-  padding: 20px;
-  background: #f9f9f9;
-  text-align: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-.pricing .box h3 {
-  font-weight: 400;
-  padding: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #191919;
-}
-.pricing .box h4 {
-  font-size: 42px;
-  color: #ff9300;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
-  margin-bottom: 20px;
-}
-.pricing .box h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-.pricing .box h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-.pricing .box ul {
-  padding: 0;
-  list-style: none;
-  color: #191919;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-.pricing .box ul li {
-  padding-bottom: 16px;
-}
-.pricing .box ul i {
-  color: #ff9300;
-  font-size: 18px;
-  padding-right: 4px;
-}
-.pricing .box ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-.pricing .box .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-.pricing .box .btn-buy {
-  background: #ff9300;
-  display: inline-block;
-  padding: 10px 40px;
-  color: #fff;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.pricing .box .btn-buy:hover {
-  background: #e82d2d;
-}
-.pricing .featured {
-  background: #ff9300;
-  box-shadow: none;
-  color: #fff;
-}
-.pricing .featured h3, .pricing .featured h4, .pricing .featured ul, .pricing .featured ul li, .pricing .featured ul .na {
-  color: #fff;
-}
-.pricing .featured h4 span {
-  color: rgba(255, 255, 255, 0.58);
-}
-.pricing .featured .btn-wrap {
-  padding: 15px;
-  text-align: center;
-}
-.pricing .featured .btn-buy {
-  background: rgba(255, 255, 255, 0.2);
-}
-.pricing .featured .btn-buy:hover {
-  background: #fff;
-  color: #ff9300;
-}
 
-
-/*--------------------------------------------------------------
-# Team
---------------------------------------------------------------*/
-.team .member {
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
-  padding: 30px 20px;
-  background: #fff;
-}
-.team .member img {
-  max-width: 60%;
-  border-radius: 50%;
-  margin: 0 0 30px 0;
-}
-.team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
-}
-.team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
-}
-.team .member p {
-  padding-top: 10px;
-  font-size: 14px;
-  font-style: italic;
-  color: #aaaaaa;
-}
-.team .member .social {
-  margin-top: 15px;
-}
-.team .member .social a {
-  color: #919191;
-  transition: 0.3s;
-}
-.team .member .social a:hover {
-  color: #ff9300;
-}
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
 
 /*--------------------------------------------------------------
 # Contact
@@ -1436,34 +1223,6 @@ contact .info-box a {
   }
 }
 
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: #efefef;
-}
-.breadcrumbs h2 {
-  font-size: 26px;
-  font-weight: 600;
-}
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  margin: 0;
-  font-size: 14px;
-}
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #333333;
-  content: "/";
-}
 
 /*--------------------------------------------------------------
 # Footer
@@ -1816,7 +1575,6 @@ contact .info-box a {
 /* Estilo para la sección de programa y call for papers */
 .programa {
   position: relative;
-  background-color: #f9f9f9;
 }
 
 .programa .card {
