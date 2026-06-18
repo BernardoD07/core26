@@ -166,7 +166,24 @@ const translations = {
     'en': 'Delivered by a researcher invited to the CIC, who will present a relevant topic related to the center\'s research lines for approximately 40 to 60 minutes. These conferences allow congress attendees to learn about research developed by experts in engineering and computing, and even establish possible collaborations.'
   },
   // Continuar con el resto de traducciones para todas las secciones
-  
+  // Sección Convocatoria
+  'calls_title':{
+    'es': 'Convocatorias',
+    'en': 'Calls'
+  },
+  'calls_text':{
+    'es': 'Información importante para autores',
+    'en': 'Important information for authors'
+  },
+  'calls_description':{
+    'es': 'Los artículos pueden ser enviados en Word o LaTeX.',
+    'en': 'Articles can be submitted in Word or LaTeX.'
+  },
+  'call_for_papers_title': {
+    'es': 'Convocatoria para presentar artículos',
+    'en': 'Call for papers'
+  },
+
   // Programa de talleres
   'talleres_title': {
     'es': 'Talleres',

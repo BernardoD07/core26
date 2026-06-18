@@ -620,6 +620,11 @@ section {
   background-color: var(--core-color2);
 }
 
+
+/*--------------------------------------------------------------
+# Convocatorias
+--------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Galería
 --------------------------------------------------------------*/
@@ -1612,22 +1617,8 @@ contact .info-box a {
   font-weight: bold;
 }
 
-.programa .btn-primary {
-  background-color: var(--core-color2);
-  border-color: var(--core-color2);
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s;
-}
 
-.programa .btn-primary:hover {
-  background-color: var(--core-color1);
-  border-color: var(--core-color1);
-  color: #333;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(230, 13, 49, 0.3);
-}
+
 
 /* Estilos para la sección de sponsors */
 .sponsors {
