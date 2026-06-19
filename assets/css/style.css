@@ -622,8 +622,101 @@ section {
 
 
 /*--------------------------------------------------------------
-# Convocatorias
+# Botones de redes sociales
 --------------------------------------------------------------*/
+
+/* ==========================================
+   ESTILOS CHIDOS PARA REDES SOCIALES CORE2026
+   ========================================== */
+
+/* Estilo base para todos los botones de redes */
+.btn-facebook, .btn-instagram, .btn-youtube, .btn-twitter {
+  background-color: transparent !important;
+  border-radius: 50px !important; /* Forma de píldora súper estética */
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase; /* Formato formal de congreso */
+  padding: 10px 24px !important;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* Animación suave */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Forzar que los textos internos hereden las transiciones */
+.btn-facebook *, .btn-instagram *, .btn-youtube *, .btn-twitter * {
+  transition: color 0.35s ease !important;
+}
+
+/* 1. ESTILO FACEBOOK */
+.btn-facebook {
+  border: 2px solid #1877F2 !important;
+  color: #1877F2 !important;
+}
+.btn-facebook:hover {
+  background-color: #1877F2 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4) !important;
+  transform: translateY(-2px);
+}
+.btn-facebook:hover i {
+  color: #ffffff !important; /* El icono cambia a blanco en hover */
+}
+
+/* 2. ESTILO INSTAGRAM */
+.btn-instagram {
+  border: 2px solid #E1306C !important;
+  color: #E1306C !important;
+}
+.btn-instagram:hover {
+  /* Al hacer hover se convierte en el gradiente clásico de Instagram */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4) !important;
+  transform: translateY(-2px);
+}
+.btn-instagram:hover i {
+  color: #ffffff !important;
+}
+
+/* 3. ESTILO YOUTUBE */
+.btn-youtube {
+  border: 2px solid #ff0000 !important;
+  color: #ff0000 !important;
+}
+.btn-youtube:hover {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
+  transform: translateY(-2px);
+}
+.btn-youtube:hover i {
+  color: #ffffff !important;
+}
+
+/* 4. ESTILO X (TWITTER) */
+.btn-twitter {
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+}
+.btn-twitter:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-2px);
+}
+.btn-twitter:hover i {
+  color: #ffffff !important;
+}
+
+/* Efecto al hacer clic en cualquiera (Feedback táctil) */
+.btn-facebook:active, .btn-instagram:active, .btn-youtube:active, .btn-twitter:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
+}
 
 /*--------------------------------------------------------------
 # Galería

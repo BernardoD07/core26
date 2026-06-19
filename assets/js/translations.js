@@ -136,17 +136,13 @@ const translations = {
     'es': 'Asimismo, el congreso servirá como plataforma para difundir proyectos de investigación y desarrollos tecnológicos realizados por la comunidad científica, promoviendo el intercambio de experiencias y la colaboración entre distintos sectores.',
     'en': 'Likewise, the congress will serve as a platform to disseminate research projects and technological developments carried out by the scientific community, promoting the exchange of experiences and collaboration between different sectors.'
   },
-  'facebook_title': {
-    'es': '¡Síguenos en Facebook!',
-    'en': 'Follow us on Facebook!'
+  'redes_sociales_title': {
+    'es': '¡Síguenos en nuestras redes sociales!',
+    'en': 'Follow us on our social media!'
   },
-  'facebook_text': {
-    'es': 'Mantente al día con nuestras últimas noticias y eventos. ¡Síguenos y sé parte de nuestra comunidad en Facebook!',
-    'en': 'Stay up to date with our latest news and events. Follow us and be part of our Facebook community!'
-  },
-  'facebook_button': {
-    'es': 'CORE2026 en Facebook',
-    'en': 'CORE2026 on Facebook'
+  'redes_sociales_text': {
+    'es': 'Mantente al día con nuestras últimas noticias y eventos. ¡Síguenos y sé parte de nuestra comunidad!',
+    'en': 'Stay up to date with our latest news and events. Follow us and be part of our community!'
   },
   // Continuar con todas las traducciones para las ponencias
   'ponencias_title': {
