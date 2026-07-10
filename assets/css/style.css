@@ -574,33 +574,21 @@ section {
   overflow: hidden;
 }
 
-/* El contenedor interno ya no necesita limitar el ancho, solo deja pasar la info 
+/* El contenedor interno ya no necesita limitar el ancho, solo deja pasar la info*/
 .image-wrapper-programaCore {
   position: relative;
   width: 100%;
-} */
+} 
 
-/* La imagen hereda el ancho, mantiene su proporción y NO se deforma ni se corta
+/* La imagen hereda el ancho, mantiene su proporción y NO se deforma ni se corta*/
 .image-wrapper-programaCore img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain; /* Asegura que se respete la proporción original del flyer 
-} */
+  object-fit: contain; /* Asegura que se respete la proporción original del flyer*/
+} 
 
 
-/* Contenedor específico para el PDF */
-.pdf-container {
-    height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
-    min-height: 600px; /* Evita que se colapse en pantallas muy pequeñas */
-    background-color: #f8f9fa; /* Fondo neutro mientras carga */
-}
-
-/* Opcional: Asegurar que todo el carrusel mantenga consistencia visual */
-.custom-carousel .carousel-item {
-    height: 80vh;
-    min-height: 600px;
-}
 
 
 
