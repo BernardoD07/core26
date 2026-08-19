@@ -78,61 +78,122 @@
 
                 <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <!-- Contenedor para logos de patrocinadores -->
-                    <div class="sponsors-container mb-5" id="sponsors-logos">
-                    <!-- Aquí se añadirán los logos de los patrocinadores -->
-                    <div class="sponsors-placeholder">
-                        <div class="sponsors-icon">
-                        <i class="bi bi-building"></i>
-                        </div>
-                        <p class="text-muted" data-translate="sponsors_coming_soon">Próximamente se anunciarán los patrocinadores del evento</p>
-                    </div>
-                    </div>
-                    
+
                     <!-- Información sobre patrocinios -->
                     <div class="card sponsor-info-card">
-                    <div class="card-body p-4">
+                    <div class="card-body p-2">
                         <h3 class="card-title text-center mb-4" data-translate="become_sponsor">¿Interesado en ser patrocinador?</h3>
+                        <!-- 
                         <div class="sponsor-contact-info text-center mb-4">
-                        <p data-translate="sponsor_contact">Para información sobre cómo convertirse en patrocinador del Congreso CORE 2026, por favor contacte a: <a href="mailto:core@cic.ipn.mx">core@cic.ipn.mx</a></p>
+                            <p data-translate="sponsor_contact">Para información sobre cómo convertirse en patrocinador del Congreso CORE 2026, por favor contacte a: <a href="mailto:core@cic.ipn.mx">core@cic.ipn.mx</a></p>
                         </div>
+                        -->
                         
-                        <div class="sponsor-levels">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                            <div class="sponsor-level platinum">
-                                <h4>Platino</h4>
-                                <div class="price">$(Próximamente)</div>
-                                <ul>
-                                <li>Logo en materiales promocionales</li>
-                                <li>Stand en área de exhibición</li>
-                                <li>Presentación promocional</li>
-                                <li>4 pases completos al congreso</li>
-                                </ul>
-                            </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                            <div class="sponsor-level gold">
-                                <h4>Oro</h4>
-                                <div class="price">$(Próximamente)</div>
-                                <ul>
-                                <li>Logo en materiales promocionales</li>
-                                <li>Stand en área de exhibición</li>
-                                <li>2 pases completos al congreso</li>
-                                </ul>
-                            </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                            <div class="sponsor-level silver">
-                                <h4>Plata</h4>
-                                <div class="price">$(Próximamente)</div>
-                                <ul>
-                                <li>Logo en materiales promocionales</li>
-                                <li>1 pase completo al congreso</li>
-                                </ul>
-                            </div>
+                    <!--    Información sobre los niveles de patrocinio    -->
+                        <!-- ======= Carrusel Compacto de Patrocinadores ======= -->
+                        <div class="sponsor-carousel-container position-relative my-5">
+                            
+                            <!-- Contenedor Flex que simula la vista 3D / Carrusel en Fila -->
+                            <div class="d-flex justify-content-center align-items-center gap-3 overflow-hidden py-4">
+                                
+                                <!-- 1. Tarjeta ORO (Izquierda) -->
+                                <div class="sponsor-mini-card card-gold text-center p-3">
+                                    <div class="sponsor-icon-sm mb-2"><i class="bi bi-award-fill"></i></div>
+                                    <h4 class="fw-bold m-0">Oro</h4>
+                                    <p class="text-muted small my-2">"13 beneficios"</p>
+                                    <div class="d-grid gap-2 mt-3">
+                                        <button class="btn btn-sm btn-outline-warning btn-ver-beneficios" type="button">
+                                            <i class="bi bi-eye"></i> Ver beneficios
+                                        </button>
+                                        <a href="https://forms.gle/VanLmbDoD8D2uPz96" target="_blank" class="btn btn-sm btn-sponsor-gold">
+                                            Quiero ser patrocinador
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Tarjeta PLATINO (Centro - Destacada y más grande) -->
+                                <div class="sponsor-mini-card card-platinum text-center p-4 featured-mini">
+                                    <div class="sponsor-icon-sm mb-2"><i class="bi bi-gem fs-1"></i></div>
+                                    <h3 class="fw-bold text-gradient-plat m-0">Platino</h3>
+                                    <p class="text-muted small my-2">"16 beneficios"</p>
+                                    <div class="d-grid gap-2 mt-3">
+                                        <button class="btn btn-sm btn-outline-primary btn-ver-beneficios" type="button">
+                                            <i class="bi bi-eye"></i> Ver beneficios
+                                        </button>
+                                        <a href="https://forms.gle/VanLmbDoD8D2uPz96" target="_blank" class="btn btn-sm btn-sponsor-plat">
+                                            Quiero ser patrocinador
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Tarjeta PLATA (Derecha) -->
+                                <div class="sponsor-mini-card card-silver text-center p-3">
+                                    <div class="sponsor-icon-sm mb-2"><i class="bi bi-shield-shaded"></i></div>
+                                    <h4 class="fw-bold m-0">Plata</h4>
+                                    <p class="text-muted small my-2">"9 beneficios"</p>
+                                    <div class="d-grid gap-2 mt-3">
+                                        <button class="btn btn-sm btn-outline-secondary btn-ver-beneficios" type="button">
+                                            <i class="bi bi-eye"></i> Ver beneficios
+                                        </button>
+                                        <a href="https://forms.gle/VanLmbDoD8D2uPz96" target="_blank" class="btn btn-sm btn-sponsor-silver">
+                                            Quiero ser patrocinador
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
+                        <!-- ======= MODAL FULLSCREEN DE BENEFICIOS ======= -->
+                        <div class="modal fade" id="modalBeneficios" tabindex="-1" aria-labelledby="modalBeneficiosLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content border-0 shadow-lg">
+                                    <div class="modal-header bg-dark text-white">
+                                        <h5 class="modal-header-title fw-bold m-0" id="modalBeneficiosLabel">
+                                            <i class="bi bi-table me-2"></i>Tabla Comparativa de Beneficios
+                                        </h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-hover align-middle mb-0 text-center custom-sponsor-table">
+                                                <thead class="table-dark sticky-top">
+                                                    <tr>
+                                                        <th class="text-start ps-4 py-3">Beneficio</th>
+                                                        <th class="py-3 text-plat-header"><i class="bi bi-gem"></i> Platino</th>
+                                                        <th class="py-3 text-gold-header"><i class="bi bi-award-fill"></i> Oro</th>
+                                                        <th class="py-3 text-silver-header"><i class="bi bi-shield-shaded"></i> Plata</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td class="text-start ps-4">Acceso al congreso</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Acceso a los 5 días de talleres</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Acceso a OpenLabs</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Logo en página web</td><td><strong>Destacado</strong></td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Logo en programa oficial</td><td><strong>Destacado</strong></td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Logo en souvenirs y materiales oficiales</td><td>✓</td><td>✓</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Conferencia magistral</td><td>✓</td><td>—</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Conferencia o charla especializada</td><td>✓</td><td>✓</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Taller especializado</td><td>✓</td><td>✓</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Participación en paneles y actividades especiales</td><td>✓</td><td>—</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Acceso preferencial a networking</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Espacio para promoción y reclutamiento</td><td>✓</td><td>✓</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Entrevista o publicación destacada en redes</td><td>✓</td><td>—</td><td>—</td></tr>
+                                                    <tr><td class="text-start ps-4">Mención en redes sociales</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Presentación institucional</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                    <tr><td class="text-start ps-4">Constancia oficial de patrocinador</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer bg-light">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <a href="https://forms.gle/VanLmbDoD8D2uPz96" target="_blank" class="btn btn-sponsor-plat px-4">
+                                            Quiero ser patrocinador
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="mt-4">
@@ -151,7 +212,20 @@
                     </div>
                     </div>
                 </div>
+                <!-- Contenedor para logos de patrocinadores -->
+                <div class="sponsors-container mb-5" id="sponsors-logos">
+                <!-- Aquí se añadirán los logos de los patrocinadores -->
+                <div class="sponsors-placeholder">
+                    <div class="sponsors-icon">
+                    <i class="bi bi-building"></i>
+                    </div>
+                    <p class="text-muted" data-translate="sponsors_coming_soon">Próximamente se anunciarán los patrocinadores del evento</p>
                 </div>
+                </div>
+
+                </div>
+
+                
             </div>
         </section>
         <!-- End Sponsors Section -->
@@ -164,5 +238,29 @@
     <!-- Language Translation JS File -->
     <script src="assets/js/translations.js?v=1.0"></script>
 
+    <!-- Cargar Bootstrap Bundle JS (Si no lo tenías incluido) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Inicializar el modal mediante la API de JS de Bootstrap
+        const modalElement = document.getElementById('modalBeneficios');
+        const bsModal = new bootstrap.Modal(modalElement);
+
+        // Seleccionar todos los botones de "Ver beneficios"
+        const btnBeneficios = document.querySelectorAll('.btn-ver-beneficios');
+
+        // Asignar el evento click a cada botón
+        btnBeneficios.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+            bsModal.show(); // Abrir el modal en pantalla
+        });
+        });
+    });
+    </script>
+
 </body>
 </html>
+
+

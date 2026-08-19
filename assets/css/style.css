@@ -1772,93 +1772,180 @@ contact .info-box a {
   transform: scale(1.05);
 }
 
-.sponsor-info-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+
+/* ==========================================
+   CARRUSEL COMPACTO Y TARJETAS RESPONSIVE
+   ========================================== */
+
+/* Animación de destello plateado continuo */
+@keyframes silverShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.sponsor-mini-card {
+  width: 240px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
-}
-
-.sponsor-info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.sponsor-contact-info {
-  padding: 15px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.sponsor-contact-info a {
-  font-weight: bold;
-  color: var(--core-color2);
-}
-
-.sponsor-levels {
-  margin: 30px 0;
-}
-
-.sponsor-level {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  height: 100%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.sponsor-level:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.sponsor-level h4 {
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.sponsor-level .price {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--core-color2);
-}
-
-.sponsor-level ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.sponsor-level ul li {
-  padding: 5px 0;
+  flex-shrink: 0;
   position: relative;
-  padding-left: 25px;
+  overflow: hidden;
 }
 
-.sponsor-level ul li:before {
-  content: "\f560";
-  font-family: "bootstrap-icons";
+/* Efecto plateado/metalizado dinámico en el fondo de todas las tarjetas */
+.sponsor-mini-card::before {
+  content: '';
   position: absolute;
+  top: 0;
   left: 0;
-  top: 5px;
-  color: var(--core-color2);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    115deg, 
+    transparent 20%, 
+    rgba(255, 255, 255, 0.7) 40%, 
+    rgba(200, 207, 216, 0.4) 50%, 
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: silverShimmer 4s infinite linear;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.sponsor-level.platinum {
-  border-top: 5px solid #e5e4e2;
+.sponsor-mini-card > * {
+  position: relative;
+  z-index: 2;
 }
 
-.sponsor-level.gold {
-  border-top: 5px solid #FFD700;
+/* Efecto Platino con borde redondeado y degradado azul-amarillo */
+.featured-mini {
+  width: 280px;
+  border-radius: 16px !important;
+  border: 3px solid transparent !important;
+  background: 
+    linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%) padding-box, 
+    linear-gradient(
+      135deg, 
+      var(--core-color4) 0%, 
+      var(--core-color5) 55%, 
+      var(--core-color3) 85%, 
+      var(--core-color2) 100%
+    ) border-box !important;
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(21, 93, 177, 0.25) !important;
+  z-index: 3;
+  position: relative;
+  overflow: hidden;
 }
 
-.sponsor-level.silver {
-  border-top: 5px solid #C0C0C0;
+.badge-mini-plat {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, var(--core-color1), var(--core-color4));
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 3px 12px;
+  border-radius: 10px;
+}
+
+/* Colores de bordes superiores */
+.card-gold { border-top: 5px solid var(--core-color2); }
+.card-silver { 
+  border-top: 5px solid #a8b2b9; 
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
+}
+
+.sponsor-icon-sm i {
+  font-size: 2.2rem;
+}
+
+.card-gold .sponsor-icon-sm i { color: var(--core-color2); }
+.card-silver .sponsor-icon-sm i { color: #7d8a96; }
+.card-platinum .sponsor-icon-sm i {
+  background: linear-gradient(45deg, var(--core-color1), var(--core-color4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botones de acción */
+.btn-sponsor-gold {
+  background: linear-gradient(45deg, var(--core-color1), var(--core-color3));
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Botón Plata mejorado con acabado acero */
+.btn-sponsor-silver {
+  background: linear-gradient(45deg, #707c88, #b0bec5, #707c88);
+  background-size: 200% auto;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-sponsor-silver:hover {
+  background-position: right center;
+  color: #fff;
+}
+
+.btn-sponsor-plat {
+  background: linear-gradient(45deg, var(--core-bt), var(--core-color4));
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(22, 236, 102, 0.4);
+}
+
+/* ESTILOS DE LA TABLA EN EL MODAL */
+.custom-sponsor-table th.text-plat-header { color: #64b5f6; }
+.custom-sponsor-table th.text-gold-header { color: var(--core-color3); }
+.custom-sponsor-table th.text-silver-header { color: #cfd8dc; }
+
+.custom-sponsor-table tbody tr:hover {
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+/* ==========================================
+   ADAPTABILIDAD RESPONSIVE (Móviles y Tablets)
+   ========================================== */
+
+@media (max-width: 991px) {
+  .sponsor-carousel-container .d-flex {
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no caben */
+    gap: 1.5rem !important;
+  }
+
+  .sponsor-mini-card,
+  .featured-mini {
+    width: 100%;
+    max-width: 320px; /* Tamaño uniforme en pantallas pequeñas */
+    transform: none !important; /* Desactiva el escalado para no deformar layout */
+  }
+
+  .featured-mini {
+    order: -1; /* Muestra Platino primero en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .sponsor-carousel-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .sponsor-mini-card {
+    max-width: 100%;
+  }
 }
 
 .download-btn {
