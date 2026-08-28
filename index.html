@@ -163,30 +163,79 @@
       </div>
     </section>
 
-    <!-- Start Noticias y Convocatorias Section -->
-    <section id="noticias_convocatorias" class="py-0">
-        <div class="container">
-            
-          <!-- Banner/Encabezado de la extensión de fecha -->
-          <div class="row justify-content-center mb-4 text-center">
-              <div class="col-lg-8">
-                  <div class="alert alert-warning border-warning shadow-sm p-4" role="alert">
-                      <h2 class="h4 text-uppercase fw-bold text-dark mb-2">
-
-                        ¡Última noticia!
-                        Se extiende la fecha de recepción de artículos
-                      </h2>
-                      <p class="fs-5 text-dark mb-3">
-                          Nueva fecha límite para enviar tus trabajos: <strong>21 de agosto de 2026</strong>.
-                      </p>
-                      <!-- Botón "Mirar convocatoria" -->
-                      <a href="convocatorias.html#call-for-papers" class="btn btn-primary fw-semibold me-2">
-                          <i class="bx bx-show me-1"></i> Mirar convocatoria
-                      </a>
-                  </div>
-              </div>
-          </div>
+    <!-- Cuenta Regresiva  -->
+    <section id="cuenta-regresiva" class="cuenta-regresiva section-bg" style="background-color: #f8f9fa; padding: 60px 0;">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-title">
+          <h2>Cuenta Regresiva CORE '26</h2>
+          <p>Prepárate para el evento mas importante sobre divulgación y difusión del conocimiento: <br>Para contribuir al desarrollo nacional mediante las ideas generadas por nuestra comunidad</p>
         </div>
+
+        <div class="row justify-content-center mt-4">
+          
+          <!-- Módulo Talleres -->
+          <div class="col-lg-5 col-md-10 mb-5 d-flex align-items-stretch">
+            <div class="countdown-card w-100">
+              <div class="card-header-core bg-talleres">
+                <h3>🛠️ TALLERES</h3>
+                <p>19 al 23 de Octubre de 2026</p>
+              </div>
+              <div class="card-body-core">
+                <div class="countdown-grid" id="timer-talleres">
+                  <div class="time-block">
+                    <div class="digit-box" id="talleres-days">00</div>
+                    <div class="unit-label">Días</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="talleres-hours">00</div>
+                    <div class="unit-label">Horas</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="talleres-minutes">00</div>
+                    <div class="unit-label">Min</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="talleres-seconds">00</div>
+                    <div class="unit-label">Seg</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo Congreso -->
+          <div class="col-lg-5 col-md-10 mb-5 d-flex align-items-stretch">
+            <div class="countdown-card w-100">
+              <div class="card-header-core bg-congreso">
+                <h3>🎤 CONGRESO</h3>
+                <p>26 al 29 de Octubre de 2026</p>
+              </div>
+              <div class="card-body-core">
+                <div class="countdown-grid" id="timer-congreso">
+                  <div class="time-block">
+                    <div class="digit-box" id="congreso-days">00</div>
+                    <div class="unit-label">Días</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="congreso-hours">00</div>
+                    <div class="unit-label">Horas</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="congreso-minutes">00</div>
+                    <div class="unit-label">Min</div>
+                  </div>
+                  <div class="time-block">
+                    <div class="digit-box" id="congreso-seconds">00</div>
+                    <div class="unit-label">Seg</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!--                 Panel de discusión                 -->
@@ -319,6 +368,82 @@
 
     <!-- Language Translation JS File -->
     <script src="assets/js/translations.js"></script>
+
+    <!-- Countdown Timer JS File -->
+    <script>
+      // Fechas objetivo
+      const fechaTalleres = new Date('2026-10-19T09:00:00').getTime();
+      const fechaCongreso = new Date('2026-10-26T09:00:00').getTime();
+
+      function actualizarCuentaRegresiva() {
+        const ahora = new Date().getTime();
+
+        // Función auxiliar para calcular y renderizar el tiempo
+        function calcularTiempo(fechaObjetivo, prefix) {
+          const diferencia = fechaObjetivo - ahora;
+
+          if (diferencia > 0) {
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            
+            document.getElementById(`${prefix}-days`).innerText = String(dias).padStart(2, '0');
+            document.getElementById(`${prefix}-hours`).innerText = String(horas).padStart(2, '0');
+            document.getElementById(`${prefix}-minutes`).innerText = String(minutos).padStart(2, '0');
+            document.getElementById(`${prefix}-seconds`).innerText = String(segundos).padStart(2, '0');
+          } else {
+            document.getElementById(`${prefix}-days`).innerText = '00';
+            document.getElementById(`${prefix}-hours`).innerText = '00';
+            document.getElementById(`${prefix}-minutes`).innerText = '00';
+            document.getElementById(`${prefix}-seconds`).innerText = '00';
+          }
+        }
+
+        calcularTiempo(fechaTalleres, 'talleres');
+        calcularTiempo(fechaCongreso, 'congreso');
+      }
+
+      // Ejecución inmediata y actualización cada segundo
+      actualizarCuentaRegresiva();
+      setInterval(actualizarCuentaRegresiva, 1000);
+    </script>
+
+
+  <!-- Notificación Flotante de Cuenta Regresiva (Expandible) -->
+  <a href="#cuenta-regresiva" class="notificacion-cuenta" id="notif-cuenta">
+    <span class="icon-reloj">⏱️</span> 
+    <span class="texto-notif">Cuenta regresiva ver</span>
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const botonNotif = document.getElementById("notif-cuenta");
+      
+      if (botonNotif) {
+        botonNotif.addEventListener("click", function(e) {
+          // Hacemos el scroll suave si la página no lo tiene por defecto
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+              top: targetElement.offsetTop - 70, // El -70 es para compensar la altura de tu navbar
+              behavior: "smooth"
+            });
+          }
+          
+          // Ocultamos la notificación de forma elegante al darle clic
+          this.style.opacity = "0";
+          this.style.transform = "translateY(20px)";
+          setTimeout(() => {
+            this.style.display = "none";
+          }, 300);
+        });
+      }
+    });
+  </script>
 
 
 </body>

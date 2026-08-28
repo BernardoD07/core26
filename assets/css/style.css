@@ -2065,3 +2065,202 @@ contact .info-box a {
     opacity: 1; /* Siempre visible en móviles ya que no hay hover */
   }
 }
+
+
+/* ==========================================
+ESTILOS PRO PARA LA CUENTA REGRESIVA CORE
+Basado en variables y tema principal
+========================================== */
+
+.countdown-card {
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0px 5px 25px rgba(17, 36, 66, 0.1);
+overflow: hidden;
+transition: all 0.3s ease-in-out;
+text-align: center;
+border: 1px solid rgba(0,0,0,0.05);
+}
+
+.countdown-card:hover {
+transform: translateY(-5px);
+box-shadow: 0px 8px 30px rgba(17, 36, 66, 0.15);
+}
+
+.card-header-core {
+padding: 25px 15px;
+color: #ffffff;
+}
+
+.card-header-core.bg-talleres {
+background: linear-gradient(135deg, var(--core-color4), var(--core-color5));
+}
+
+.card-header-core.bg-congreso {
+background: linear-gradient(135deg, var(--core-color1), var(--core-color2));
+}
+
+.card-header-core h3 {
+font-weight: 700;
+font-size: 24px;
+margin: 0 0 5px 0;
+color: #ffffff;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.card-header-core p {
+margin: 0;
+font-size: 15px;
+font-weight: 600;
+opacity: 0.9;
+}
+
+.card-body-core {
+padding: 30px 20px;
+background-color: #ffffff;
+}
+
+.countdown-grid {
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.time-block {
+display: flex;
+flex-direction: column;
+align-items: center;
+min-width: 70px;
+}
+
+.digit-box {
+background-color: #112442;
+color: #ffffff;
+font-size: 32px;
+font-weight: 700;
+width: 70px;
+height: 70px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+box-shadow: 0 4px 10px rgba(17, 36, 66, 0.2);
+border-bottom: 4px solid var(--core-color2);
+font-family: "Raleway", sans-serif;
+}
+
+/* Variación para el congreso (borde azul) */
+.bg-congreso + .card-body-core .digit-box {
+border-bottom: 4px solid var(--core-color4);
+}
+
+.unit-label {
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: #777777;
+margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+.countdown-grid {
+  gap: 10px;
+}
+.digit-box {
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+}
+.time-block {
+  min-width: 55px;
+}
+}
+
+/* ==========================================
+   NOTIFICACIÓN FLOTANTE EXPANDIBLE (HOVER)
+   ========================================== */
+.notificacion-cuenta {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background-color: #ff9300; /* Naranja llamativo CORE */
+  color: #ffffff !important;
+  height: 50px;
+  padding: 0 15px; /* Padding compacto para hacer un círculo/cuadrado redondeado */
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* Sin espacio inicial porque el texto está oculto */
+  z-index: 9998;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(255, 147, 0, 0.4);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Animación de entrada y latido constante */
+  animation: slideInUpNotif 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards, pulseOrange 2s infinite;
+}
+
+.notificacion-cuenta .icon-reloj {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* El texto inicia completamente oculto y colapsado */
+.notificacion-cuenta .texto-notif {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 0;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* EFECTO HOVER: Expansión del botón */
+.notificacion-cuenta:hover {
+  background-color: #e82d2d; /* Cambia a rojo al pasar el mouse */
+  padding: 0 24px; /* Aumenta el padding a los lados */
+  gap: 8px; /* Separa el icono del texto */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(232, 45, 45, 0.5);
+  animation: none; /* Detiene el latido mientras lo lees */
+}
+
+/* EFECTO HOVER: Aparición del texto */
+.notificacion-cuenta:hover .texto-notif {
+  max-width: 250px; /* Expande el contenedor para que quepa el texto */
+  opacity: 1;
+}
+
+/* Efecto de latido para llamar la atención */
+@keyframes pulseOrange {
+  0% { box-shadow: 0 0 0 0 rgba(255, 147, 0, 0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 147, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 147, 0, 0); }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes slideInUpNotif {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ajustes para móviles (Se mantiene a la izquierda para que la animación de expansión hacia la derecha se vea natural al tocarlo) */
+@media (max-width: 768px) {
+  .notificacion-cuenta {
+    bottom: 20px;
+    left: 20px; 
+  }
+}
