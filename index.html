@@ -163,6 +163,30 @@
       </div>
     </section>
 
+    <!-- ======= tiktok section ======= -->
+    
+    <!-- ==========================================
+     SECCIÓN DE CARRUSEL DE TIKTOK (CORE 2026)
+     ========================================== -->
+     <!-- Sección de Videos de TikTok -->
+    <section id="tiktok-section" class="container my-5" data-aos="fade-up">
+
+
+      <div class="tiktok-header-glow">
+        <span class="tiktok-badge"><a href="https://www.tiktok.com/@core.cic" target="_blank" rel="noopener">#TikTokCORE</a></span>
+        <h2 class="glow-title">TikTok <span class="core-gradient">CORE</span></h2>
+        <p class="glow-subtitle">Conoce más de la experiencia en nuestros videos</p>
+      </div>
+
+      <!-- Contenedor centrado de videos -->
+      <div id="tiktok-cards-container" class="tiktok-carousel-row"></div>
+      
+      <!-- Las tarjetas se generarán automáticamente aquí con JavaScript -->
+      <div id="tiktok-cards-container" class="tiktok-carousel-row"></div>
+    </section>
+
+
+
     <!-- Cuenta Regresiva  -->
     <section id="cuenta-regresiva" class="cuenta-regresiva section-bg" style="background-color: #f8f9fa; padding: 60px 0;">
       <div class="container" data-aos="fade-up">
@@ -342,18 +366,6 @@
         class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
 
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <img id="modalImage" src="" class="img-fluid" alt="Imagen completa">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-translate="modal_close">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -364,7 +376,7 @@
     
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js?v=1.0"></script>
+    <script src="assets/js/main.js"></script>
 
     <!-- Language Translation JS File -->
     <script src="assets/js/translations.js"></script>
@@ -416,6 +428,20 @@
     <span class="texto-notif">Cuenta regresiva ver</span>
   </a>
 
+  
+  <!-- Modal de Reproducción (Video Local Nativo) -->
+  <div id="tiktokModal" class="tiktok-modal-overlay" onclick="closeTikTokModalOnBackdrop(event)">
+    <div class="tiktok-modal-box">
+      <button class="btn-close-modal" onclick="closeTikTokModal()">&times;</button>
+      
+      <!-- Reproductor nativo limpio de HTML5 -->
+      <video id="tiktokPlayerVideo" controls autoplay loop playsinline>
+        <source id="tiktokVideoSource" src="" type="video/mp4">
+        Tu navegador no soporta el reproductor de video.
+      </video>
+    </div>
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const botonNotif = document.getElementById("notif-cuenta");
@@ -443,6 +469,139 @@
         });
       }
     });
+
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+    function actualizarPestanaActiva() {
+      // 1. Obtenemos el nombre del archivo (ej. index.html)
+      let path = window.location.pathname.split('/').pop();
+      if (path === '') path = 'index.html'; // Si estamos en la raíz pura, asumimos index.html
+      
+      // 2. Obtenemos el "hash" si existe (ej. #about)
+      const hash = window.location.hash; 
+      
+      // 3. Unimos ambos para tener la ruta exacta (ej. "index.html#about" o "index.html")
+      const rutaExacta = path + hash; 
+
+      // 4. Limpiamos y asignamos la clase solo al que coincida exactamente
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const hrefDelEnlace = link.getAttribute('href');
+        
+        if (hrefDelEnlace === rutaExacta) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Ejecutar al cargar la página por primera vez
+    actualizarPestanaActiva();
+
+    // Ejecutar si la URL cambia (por ejemplo, al darle clic a Bienvenida y moverse a #about)
+    window.addEventListener('hashchange', actualizarPestanaActiva);
+
+    // Hacer el cambio visual inmediato al hacer clic en cualquier enlace
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  });
+  </script>
+
+  <script>
+    // 1. Array con la información de tus videos
+    const tiktokVideos = [
+
+     {
+        url: 'https://www.tiktok.com/@core.cic/video/7680980799864294664',
+        id: '7680980799864294664',
+        views: '596'
+      },
+      {
+        url: 'https://www.tiktok.com/@core.cic/video/7680991956591234311',
+        id: '7680991956591234311',
+        views: '841'
+      },
+      {
+        url: 'https://www.tiktok.com/@core.cic/video/7683632539914833160',
+        id: '7683632539914833160',
+        views: '721'
+      },
+      {
+        url: 'https://www.tiktok.com/@core.cic/video/7683641446674599186',
+        id: '7683641446674599186',
+        views: '354'
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+    renderTikTokCards();
+  });
+
+  function renderTikTokCards() {
+    const container = document.getElementById('tiktok-cards-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+
+    tiktokVideos.forEach(video => {
+      const card = document.createElement('div');
+      card.className = 'tiktok-thumb-card';
+      
+      // Abre el enlace directo de TikTok en una pestaña nueva
+      card.onclick = () => window.open(video.url, '_blank');
+      
+      card.innerHTML = `
+        <div class="thumb-skeleton" id="skeleton-${video.id}"></div>
+        <img src="" alt="TikTok Preview" class="thumb-img" id="img-${video.id}" style="display: none;" />
+        
+        <div class="thumb-overlay">
+          <span class="views-count">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg> 
+            ${video.views}
+          </span>
+          <span class="video-title-preview" id="title-${video.id}">Cargando...</span>
+        </div>
+      `;
+      
+      container.appendChild(card);
+      fetchOembedData(video);
+    });
+  }
+
+  async function fetchOembedData(video) {
+    try {
+      const response = await fetch(`https://www.tiktok.com/oembed?url=${video.url}`);
+      const data = await response.json();
+
+      const skeleton = document.getElementById(`skeleton-${video.id}`);
+      const img = document.getElementById(`img-${video.id}`);
+      const title = document.getElementById(`title-${video.id}`);
+
+      if (skeleton) skeleton.style.display = 'none';
+      
+      if (img) {
+        img.src = data.thumbnail_url;
+        img.style.display = 'block';
+      }
+      
+      if (title) {
+        title.textContent = data.title || 'Ver en TikTok';
+      }
+    } catch (error) {
+      console.error("Error al obtener la miniatura de TikTok:", error);
+      const skeleton = document.getElementById(`skeleton-${video.id}`);
+      if (skeleton) skeleton.style.display = 'none';
+      const title = document.getElementById(`title-${video.id}`);
+      if (title) title.textContent = 'Ver en TikTok';
+    }
+  }
   </script>
 
 
