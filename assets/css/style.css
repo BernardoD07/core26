@@ -1150,109 +1150,183 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Talleres
 --------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
+/* ==========================================
+   Banner de Notificación
+   ========================================== */
+.taller-notif-banner {
+  background: linear-gradient(90deg, #112442 0%, #155db1 100%);
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
+
+.btn-notif-taller {
+  background-color: #efb810;
+  color: #112442;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
+
+.btn-notif-taller:hover {
+  background-color: #ffffff;
+  color: #112442;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   Filtros de Talleres
+   ========================================== */
+.filtros-talleres {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filtro-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filtro-btn:hover, .filtro-btn.active {
+  background-color: #155db1;
+  color: #ffffff;
+  border-color: #155db1;
+  box-shadow: 0 4px 10px rgba(21, 93, 177, 0.25);
+}
+
+/* ==========================================
+   Tarjetas de Talleres e Imágenes
+   ========================================== */
+.taller-card {
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taller-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.taller-img-container {
   position: relative;
-}
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #ff9300;
-}
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ff9300;
-}
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(25, 25, 25, 0.08);
-}
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-.portfolio-details .portfolio-info ul li + li {
-  margin-top: 10px;
-}
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.portfolio-details .portfolio-description p {
-  padding: 0;
+  height: 180px;
+  background-color: #e2e8f0;
+  overflow: hidden;
 }
 
-/* Talleres */
-
-.principal {
-  background-color: #112442;
-  color: white;
-}
-.secundario {
-  background-color: #ff9300;
-  color: black;
-}
-.taller1 { background-color: #f8cbad; }
-.taller2 { background-color: #bdd7ee; }
-.taller3 { background-color: #deebf7; }
-.taller4 { background-color: #d9e1f2; }
-.taller5 { background-color: #f4b084; }
-.taller6 { background-color: #c6e0b4; }
-.taller7 { background-color: #e4d1f7; }
-.taller8 { background-color: #b4c7e7; }
-.taller9 { background-color: #ffe699; }
-.taller10 { background-color: #ffcc99; }
-.taller11 { background-color: #b7dde8; }
-.taller12 { background-color: #d7e4bd; }
-
-
-.card {
-  margin-bottom: 100px;
+.taller-img {
+  width: 100%;
   height: 100%;
-
-}
-.card-body {
-  height: calc(100% - 56px);
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-
-
-.color-principal {
-  background: var(--core-color2);
-  color: white;
-}
-.color-principal:hover {
-  background: var(--core-color3);
-}
-.card-animada {
-  background: linear-gradient(135deg, var(--core-color1), var(--core-color2));
-  background-size: 200% 200%;
-  animation: gradient 5s ease infinite;
-  color: #333;
-  transition: transform 0.3s;
+.taller-card:hover .taller-img {
+  transform: scale(1.05);
 }
 
+.badge-lugar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(17, 36, 66, 0.85);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  font-weight: 500;
+}
+
+.hora-badge-taller {
+  display: inline-block;
+  background-color: #eef4ff;
+  color: #155db1;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.btn-info-taller {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:hover .btn-info-taller {
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+
+/* Limitar el ancho y reducir los espacios */
+#tallerModal .modal-dialog {
+  max-width: 580px;
+  margin: 1.75rem auto;
+}
+
+/* Reducir el padding interno para que sea más compacto */
+#tallerModal .modal-header {
+  padding: 0.75rem 1.25rem;
+}
+
+#tallerModal .modal-body {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+#tallerModal .modal-footer {
+  padding: 0.75rem 1.25rem;
+}
+
+/* Scroll interno opcional para descripciones largas */
+#tallerModal #modalDescripcion {
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* Desplaza el modal hacia abajo para despejar la barra de navegación */
+#tallerModal .modal-dialog {
+  max-width: 580px; /* Tamaño compacto */
+  margin-top: 100px !important; /* Ajusta este valor (px) según la altura de tu navbar */
+}
+
+/* Espaciados internos reducidos para mantenerlo compacto */
+#tallerModal .modal-header,
+#tallerModal .modal-footer {
+  padding: 0.75rem 1.25rem;
+}
+
+#tallerModal .modal-body {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+#tallerModal #modalDescripcion {
+  max-height: 160px;
+  overflow-y: auto;
+}
 
 
 /* End Talleres */
