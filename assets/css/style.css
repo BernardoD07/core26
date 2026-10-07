@@ -1705,34 +1705,7 @@ contact .info-box a {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 16 16"%3E%3Cpath d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/%3E%3C/svg%3E');
 }
 
-/*--------------------------------------------------------------
-# Comité Organizador
---------------------------------------------------------------*/
-.comite {
-  background: #f8f9fa;
-}
-
-.comite .member {
-  text-align: center;
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 4px solid var(--core-color1);
-}
-
-.comite .member h4 {
-  font-weight: 700;
-  margin-bottom: 12px;
-  font-size: 18px;
-}
-
-.comite .member span {
-  display: block;
-  font-size: 13px;
-  color: #666;
-}
+/*Otros estilos*/
 
 @keyframes gradient {
   0% {
@@ -2522,4 +2495,112 @@ margin-top: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* ==========================================
+   Comité
+   ========================================== */
+
+
+/* Member Cards Grid */
+.area-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--core-color4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.member-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--core-border-light);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(33, 150, 243, 0.12);
+  border-color: #93c5fd;
+}
+
+.member-card.highlighted {
+  border: 2px solid var(--core-color5);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+  background: #f0f9ff;
+}
+
+.member-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.member-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--core-color5);
+  background-color: #f1f5f9;
+}
+
+.member-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  color: var(--core-text-main);
+}
+
+.member-info span {
+  font-size: 13px;
+  color: var(--core-text-muted);
+  display: block;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+}
+
+.bg-area-presidencia { background: rgba(212, 164, 19, 0.15); color: #856404; }
+.bg-area-finanzas { background: rgba(22, 236, 102, 0.15); color: #0f766e; }
+.bg-area-redes { background: rgba(239, 184, 16, 0.2); color: #92400e; }
+.bg-area-editorial { background: rgba(21, 93, 177, 0.12); color: #1e3a8a; }
+.bg-area-logistica { background: rgba(33, 150, 243, 0.12); color: #0369a1; }
+.bg-area-web { background: rgba(147, 51, 234, 0.12); color: #6b21a8; }
+
+.filter-btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 1px solid var(--core-border-light);
+  background: #fff;
+  color: var(--core-text-muted);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: linear-gradient(135deg, var(--core-color4), var(--core-color5));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.25);
 }
