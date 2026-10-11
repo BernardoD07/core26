@@ -152,22 +152,6 @@
                     </div>
                 </div>
                 </div>
-                <div class="row mt-5">
-                <div class="col-12">
-                    <div class="card card-ponencias">
-                    <div class="card-header">
-                        <h3 class="card-title text-center">Información Detallada de Ponencias</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive-container">
-                            <!-- Tabla de información detallada -->
-                            
-
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
                 
             </div>
             </section>
@@ -175,680 +159,392 @@
 
             <!-- ======= Calendario del Congreso ======= -->
             <section id="calendario-congreso" class="calendario-congreso">
-                <style>
-                    :root {
-                        --core-blue: #0066ff;
-                        --core-blue-light: #e6f0ff;
-                        --core-yellow: #ffc107;
-                        --core-yellow-light: #fff9e6;
-                        --core-dark: #1e293b;
-                        --core-bg: #f8fafc;
-                        --core-card-bg: #ffffff;
-                        --core-text: #334155;
-                        --core-muted: #64748b;
-                        --core-border: #f1f5f9;
-                    }
 
-                    .calendar-dashboard {
-                        max-width: 1100px;
-                        margin: 0 auto;
-                        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-                        color: var(--core-text);
-                    }
+            <div class="calendar-dashboard py-4">
+                <!-- Encabezado -->
+                <div class="dashboard-header text-center mb-4">
+                    <h2 class="fw-bold" style="color: #112442; text-transform: uppercase;">CALENDARIO DE CONGRESOS / PAPERS</h2>
+                    <p class="text-muted mb-0"><i class="bi bi-calendar3 me-1"></i> Congreso CORE 2026 — Del 26 al 30 de octubre de 2026</p>
+                    <small class="text-muted fw-semibold">¡Anota la fecha y hora de las conferencias de tu interés!</small>
+                </div>
 
-                    /* Encabezado */
-                    .dashboard-header {
-                        text-align: center;
-                        margin-bottom: 2rem;
-                    }
+                <!-- Pestañas de Días -->
+                <div class="filtros-talleres mb-4 d-flex justify-content-center gap-2 flex-wrap">
+                    <button class="filtro-btn active" onclick="switchDay('lunes', this)"><i class="bi bi-calendar-day me-1"></i> Lunes 26</button>
+                    <button class="filtro-btn" onclick="switchDay('martes', this)"><i class="bi bi-calendar-day me-1"></i> Martes 27</button>
+                    <button class="filtro-btn" onclick="switchDay('miercoles', this)"><i class="bi bi-calendar-day me-1"></i> Miércoles 28</button>
+                    <button class="filtro-btn" onclick="switchDay('jueves', this)"><i class="bi bi-calendar-day me-1"></i> Jueves 29</button>
+                    <button class="filtro-btn" onclick="switchDay('vista-general', this)"><i class="bi bi-grid-3x3-gap-fill me-1"></i> Tabla General</button>
+                </div>
 
-                    .dashboard-header h2 {
-                        font-weight: 800;
-                        color: var(--core-dark);
-                        letter-spacing: -0.5px;
-                        margin-bottom: 0.25rem;
-                    }
+                <div class="container" style="max-width: 1000px;">
 
-                    .dashboard-header p {
-                        color: var(--core-muted);
-                        font-size: 0.95rem;
-                    }
-
-                    /* Pestañas tipo Widgets para Días */
-                    .days-widget-grid {
-                        display: grid;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 1.25rem;
-                        margin-bottom: 2rem;
-                    }
-
-                    .day-widget-btn {
-                        background: var(--core-card-bg);
-                        border: 2px solid transparent;
-                        border-radius: 16px;
-                        padding: 1.2rem 1rem;
-                        text-align: left;
-                        cursor: pointer;
-                        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-
-                    .day-widget-btn:hover {
-                        transform: translateY(-3px);
-                        box-shadow: 0 8px 25px rgba(0, 102, 255, 0.12);
-                    }
-
-                    .day-widget-btn.active {
-                        background: var(--core-blue);
-                        border-color: var(--core-blue);
-                        box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
-                    }
-
-                    .day-info .day-num {
-                        font-size: 1.8rem;
-                        font-weight: 800;
-                        line-height: 1;
-                        color: var(--core-dark);
-                    }
-
-                    .day-info .day-text {
-                        font-size: 0.85rem;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        color: var(--core-muted);
-                        margin-top: 4px;
-                        display: block;
-                    }
-
-                    .day-widget-btn.active .day-num,
-                    .day-widget-btn.active .day-text,
-                    .day-widget-btn.active .day-icon {
-                        color: #ffffff;
-                    }
-
-                    .day-icon {
-                        font-size: 1.5rem;
-                        color: var(--core-blue);
-                        background: var(--core-blue-light);
-                        width: 42px;
-                        height: 42px;
-                        border-radius: 12px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        transition: all 0.25s ease;
-                    }
-
-                    .day-widget-btn.active .day-icon {
-                        background: rgba(255, 255, 255, 0.2);
-                    }
-
-                    /* Panel Principal de Actividades */
-                    .calendar-panel {
-                        background: var(--core-card-bg);
-                        border-radius: 20px;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-                        border: 1px solid var(--core-border);
-                        overflow: hidden;
-                    }
-
-                    .panel-header {
-                        background: var(--core-dark);
-                        color: #ffffff;
-                        padding: 1.25rem 1.75rem;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-
-                    .panel-header h3 {
-                        margin: 0;
-                        font-size: 1.1rem;
-                        font-weight: 700;
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                    }
-
-                    .badge-count {
-                        background: rgba(255, 255, 255, 0.15);
-                        backdrop-filter: blur(4px);
-                        color: #ffffff;
-                        padding: 0.35rem 0.85rem;
-                        border-radius: 30px;
-                        font-size: 0.8rem;
-                        font-weight: 600;
-                    }
-
-                    /* Items de Actividades (Tarjetas/Widgets Internos) */
-                    .day-content {
-                        display: none;
-                        padding: 1.25rem;
-                    }
-
-                    .day-content.active {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.85rem;
-                    }
-
-                    .activity-card {
-                        background: #ffffff;
-                        border: 1px solid var(--core-border);
-                        border-radius: 14px;
-                        padding: 1rem 1.25rem;
-                        display: grid;
-                        grid-template-columns: 130px 48px 1fr;
-                        align-items: center;
-                        gap: 1.25rem;
-                        transition: all 0.2s ease;
-                    }
-
-                    .activity-card:hover {
-                        border-color: #cbd5e1;
-                        transform: translateX(4px);
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-                    }
-
-                    /* Hora Badge */
-                    .time-badge {
-                        background: var(--core-blue-light);
-                        color: var(--core-blue);
-                        font-weight: 700;
-                        font-size: 0.82rem;
-                        padding: 0.5rem 0.75rem;
-                        border-radius: 10px;
-                        text-align: center;
-                    }
-
-                    /* Icono de la actividad */
-                    .activity-icon-box {
-                        width: 44px;
-                        height: 44px;
-                        border-radius: 12px;
-                        background: var(--core-bg);
-                        color: var(--core-blue);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 1.25rem;
-                    }
-
-                    /* Info de actividad */
-                    .activity-details h4 {
-                        margin: 0 0 0.2rem 0;
-                        font-size: 0.98rem;
-                        font-weight: 700;
-                        color: var(--core-dark);
-                    }
-
-                    .activity-details p {
-                        margin: 0;
-                        font-size: 0.85rem;
-                        color: var(--core-muted);
-                    }
-
-                    /* Variaciones por Categoría (Azul y Amarillo) */
-                    /* Recesos / Coffee Breaks */
-                    .activity-card.is-break {
-                        background: var(--core-yellow-light);
-                        border-color: #fde68a;
-                    }
-                    .activity-card.is-break .time-badge {
-                        background: var(--core-yellow);
-                        color: #000000;
-                    }
-                    .activity-card.is-break .activity-icon-box {
-                        background: #ffffff;
-                        color: var(--core-yellow-dark);
-                    }
-
-                    /* Actividad Sorpresa */
-                    .activity-card.is-sorpresa {
-                        background: var(--core-blue-light);
-                        border-color: #bfdbfe;
-                    }
-                    .activity-card.is-sorpresa .time-badge {
-                        background: var(--core-blue);
-                        color: #ffffff;
-                    }
-                    .activity-card.is-sorpresa .activity-icon-box {
-                        background: #ffffff;
-                        color: var(--core-blue);
-                    }
-
-                    /* Responsive Móvil */
-                    @media (max-width: 768px) {
-                        .days-widget-grid {
-                        grid-template-columns: repeat(2, 1fr);
-                        gap: 0.75rem;
-                        }
-
-                        .activity-card {
-                        grid-template-columns: 1fr;
-                        gap: 0.75rem;
-                        padding: 1rem;
-                        }
-
-                        .time-badge {
-                        display: inline-block;
-                        width: fit-content;
-                        }
-
-                        .activity-icon-box {
-                        display: none; /* Oculta ícono en móviles muy pequeños para ahorrar espacio */
-                        }
-                    }
-
-
-
-                    .activity-card.hover-modal {
-                        cursor: pointer;
-                        transition: transform 0.2s ease, box-shadow 0.2s ease;
-                    }
-
-                    .activity-card.hover-modal:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-                    }
-                    </style>
-
-                    <div class="calendar-dashboard">
-                    <!-- Encabezado -->
-                    <div class="dashboard-header">
-                        <h2>HORARIO GENERAL DEL CONGRESO CORE 2026</h2>
-                        <p><i class="bi bi-calendar3"></i> Programa detallado de actividades del 26 al 29 de octubre de 2026</p>
-                    </div>
-
-                    <!-- Pestañas de Días Estilo Widgets -->
-                    <div class="days-widget-grid">
-                        <button class="day-widget-btn active" onclick="switchDay('lunes', this)">
-                        <div class="day-info">
-                            <span class="day-num">26</span>
-                            <span class="day-text">Lunes</span>
-                        </div>
-                        <div class="day-icon"><i class="bi bi-calendar-event"></i></div>
-                        </button>
-
-                        <button class="day-widget-btn" onclick="switchDay('martes', this)">
-                        <div class="day-info">
-                            <span class="day-num">27</span>
-                            <span class="day-text">Martes</span>
-                        </div>
-                        <div class="day-icon"><i class="bi bi-calendar-event"></i></div>
-                        </button>
-
-                        <button class="day-widget-btn" onclick="switchDay('miercoles', this)">
-                        <div class="day-info">
-                            <span class="day-num">28</span>
-                            <span class="day-text">Miércoles</span>
-                        </div>
-                        <div class="day-icon"><i class="bi bi-calendar-event"></i></div>
-                        </button>
-
-                        <button class="day-widget-btn" onclick="switchDay('jueves', this)">
-                        <div class="day-info">
-                            <span class="day-num">29</span>
-                            <span class="day-text">Jueves</span>
-                        </div>
-                        <div class="day-icon"><i class="bi bi-calendar-event"></i></div>
-                        </button>
-                    </div>
-
-                    <!-- Panel Principal de Calendario -->
-                    <div class="calendar-panel">
-                        <!-- ==================== LUNES 26 DE OCTUBRE ==================== -->
-                        <div id="lunes" class="day-content active">
-                            <div class="panel-header">
-                                <h3><i class="bi bi-clock-history"></i> Lunes 26 de octubre de 2026</h3>
-                                <span class="badge-count">8 Actividades</span>
+                    <!-- ==================== LUNES 26 ==================== -->
+                    <div id="lunes" class="day-content active">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
+                                <span><i class="bi bi-clock-history me-2"></i> Lunes 26 de Octubre</span>
+                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
                             </div>
-
-                            <div class="activity-card is-break">
-                                <div class="time-badge">09:00 - 09:45</div>
-                                <div class="activity-icon-box"><i class="bi bi-cup-hot-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Inauguración</h4>
-                                    <p>Café, galletas y Networking</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Conferencia para la persona AMD', 'Sin especificar', '09:45 - 11:00', 'Sin Datos', '')">
-                                <div class="time-badge">09:45 - 11:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-person-video3"></i></div>
-                                <div class="activity-details">
-                                    <h4>Conferencia para la persona AMD</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Expositor: Sin especificar</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="time-badge">11:00 - 12:40</div>
-                                <div class="activity-icon-box"><i class="bi bi-file-earmark-text"></i></div>
-                                <div class="activity-details">
-                                    <h4>Sesión de Papers (1 al 5)</h4>
-                                    <p>Presentación de artículos científicos</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Conferencia del Prof. Langolier', 'Prof. Langolier', '12:40 - 13:25', 'proflangolier@mamayapase.com', '')">
-                                <div class="time-badge">12:40 - 13:25</div>
-                                <div class="activity-icon-box"><i class="bi bi-award-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Conferencia del Prof. Langolier</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Prof. Langolier</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('ACM Chapter', 'Asociación estudiantil de la ACM', '13:40 - 14:15', 'mpereza26@cic.ipn.mx', '')">
-                                <div class="time-badge">13:40 - 14:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-people-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>ACM Chapter</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Asociación estudiantil de la ACM</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-break">
-                                <div class="time-badge">14:00 - 14:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-cup-straw"></i></div>
-                                <div class="activity-details">
-                                    <h4>Coffee Break</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Cómputo neuromórfico para IA en el borde', 'Dr. Humberto Sossa y Dr. Víctor Hugo', '14:15 - 15:30', 'hsossa@cic.ipn.mx | vponce@cic.ipn.mx', '')">
-                                <div class="time-badge">14:15 - 15:30</div>
-                                <div class="activity-icon-box"><i class="bi bi-cpu"></i></div>
-                                <div class="activity-details">
-                                    <h4>Cómputo neuromórfico para IA en el borde</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Dr. Humberto Sossa y Dr. Víctor Hugo</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-sorpresa hover-modal" onclick="openActivityModal('Panel de Expertos: El futuro de la IA y el supercómputo', 'Sin especificar', '15:30 - 16:00', 'Sin Datos', 'Mesa de discusión e intercambio sobre tendencias en IA.')">
-                                <div class="time-badge">15:30 - 16:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-gift-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Panel de Expertos: El futuro de la IA y el supercómputo</h4>
-                                    <p>Actividad Especial Programada</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ==================== MARTES 27 DE OCTUBRE ==================== -->
-                        <div id="martes" class="day-content">
-                            <div class="panel-header">
-                                <h3><i class="bi bi-clock-history"></i> Martes 27 de octubre de 2026</h3>
-                                <span class="badge-count">7 Actividades</span>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Avances en el paradigma Minimalist Machine Learning', 'Dr. Cornelio Yáñez', '09:00 - 10:15', 'cyanez@cic.ipn.mx', '')">
-                                <div class="time-badge">09:00 - 10:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-diagram-3-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Avances en el paradigma Minimalist Machine Learning</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Dr. Cornelio Yáñez</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="time-badge">10:15 - 12:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-file-earmark-text"></i></div>
-                                <div class="activity-details">
-                                    <h4>Sesión de Papers (6 al 11)</h4>
-                                    <p>Presentación de artículos científicos</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('El corazón en tus manos: tecnología que entrena para salvar vidas', 'Mariana Delgado', '12:15 - 13:00', 'mariana16jun@gmail.com', '')">
-                                <div class="time-badge">12:15 - 13:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-heart-pulse-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>El corazón en tus manos: tecnología que entrena para salvar vidas</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Mariana Delgado</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('DELL Conferencia', 'Sin Especificar', '13:15 - 14:00', 'Sin datos', '')">
-                                <div class="time-badge">13:15 - 14:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-laptop"></i></div>
-                                <div class="activity-details">
-                                    <h4>DELL Conferencia</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-building"></i> Representante DELL</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-break">
-                                <div class="time-badge">13:45 - 14:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-cup-straw"></i></div>
-                                <div class="activity-details">
-                                    <h4>Coffee Break</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Conferencia sobre equidad de género', 'Asociación de ingenierAs', '14:00 - 15:15', 'Ingenierascona@gmail.com', '')">
-                                <div class="time-badge">14:00 - 15:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-gender-female"></i></div>
-                                <div class="activity-details">
-                                    <h4>Conferencia sobre equidad de género</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-people"></i> Asociación de ingenierAs</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-sorpresa">
-                                <div class="time-badge">15:15 - 16:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-gift-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Actividad Sorpresa</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ==================== MIÉRCOLES 28 DE OCTUBRE ==================== -->
-                        <div id="miercoles" class="day-content">
-                            <div class="panel-header">
-                                <h3><i class="bi bi-clock-history"></i> Miércoles 28 de octubre de 2026</h3>
-                                <span class="badge-count">7 Actividades</span>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Emilio Bustamante', 'Emilio Bustamante (UNAM)', '09:00 - 10:15', 'Sin Datos', '')">
-                                <div class="time-badge">09:00 - 10:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-mortarboard-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Conferencia: Emilio Bustamante</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-bank"></i> UNAM</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="time-badge">10:15 - 12:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-file-earmark-text"></i></div>
-                                <div class="activity-details">
-                                    <h4>Sesión de Papers (12 al 17)</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Presentación Especial: Influencer / Cantante', 'Sin especificar', '12:15 - 14:00', 'Sin Datos', '')">
-                                <div class="time-badge">12:15 - 13:45</div>
-                                <div class="activity-icon-box"><i class="bi bi-mic-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Influencer / Cantante</h4>
-                                    <p class="small text-muted mb-0">Sesión cultural / entretenimiento</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-break">
-                                <div class="time-badge">13:45 - 14:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-cup-straw"></i></div>
-                                <div class="activity-details">
-                                    <h4>Coffee Break</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('De la teoría al laboratorio: formando a los ingenieros de la era cuántica', 'Dr. Juan Carlos Martínez García', '14:00 - 15:15', 'Sin Datos', 'La segunda revolución cuántica está transformando la computación, las comunicaciones, la seguridad de la información y el desarrollo de sensores de extraordinaria precisión. Pero ¿cómo puede un estudiante de ingeniería pasar de estudiar estos conceptos en un pizarrón a experimentar realmente con sistemas cuánticos? En esta conferencia conoceremos una iniciativa del CINVESTAV para formar ingenieros cuánticos mediante experiencias prácticas de laboratorio. Se presentarán plataformas que permiten experimentar con control cuántico, criptografía BB84, una computadora cuántica de dos qubits y fenómenos de entrelazamiento y óptica cuántica.')">
-                                <div class="time-badge">14:00 - 15:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-atom"></i></div>
-                                <div class="activity-details">
-                                    <h4>De la teoría al laboratorio: formando a los ingenieros de la era cuántica</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Dr. Juan Carlos Martínez García</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-sorpresa hover-modal" onclick="openActivityModal('Debate: IA ¿Regulación o innovación sin restricciones?', 'Sin especificar', '15:15 - 16:00', 'Sin Datos', 'Mesa de debate sobre ética, política pública e innovación tecnológica en Inteligencia Artificial.')">
-                                <div class="time-badge">15:15 - 16:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-gift-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Debate: IA ¿Regulación o innovación sin restricciones?</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ==================== JUEVES 29 DE OCTUBRE ==================== -->
-                        <div id="jueves" class="day-content">
-                            <div class="panel-header">
-                                <h3><i class="bi bi-clock-history"></i> Jueves 29 de octubre de 2026</h3>
-                                <span class="badge-count">6 Actividades</span>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Conferencia Dr. Amadeo (Cómputo Inteligente)', 'Amadeo José Argüelles Cruz', '09:00 - 10:15', 'jamadeo@cic.ipn.mx', '')">
-                                <div class="time-badge">09:00 - 10:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-person-workspace"></i></div>
-                                <div class="activity-details">
-                                    <h4>Conferencia Dr. Amadeo (Cómputo Inteligente)</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Amadeo José Argüelles Cruz</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card">
-                                <div class="time-badge">10:15 - 12:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-file-earmark-text"></i></div>
-                                <div class="activity-details">
-                                    <h4>Sesión de Papers (18 al 23)</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-break hover-modal" onclick="openActivityModal('OPENLABs / Coffee Break', 'Laboratorios CIC', '12:15 - 14:00', 'Sin Datos', 'Espacio dedicado a que la comunidad estudiantil muestre su trabajo ante asistentes, colegas y visitantes del congreso.')">
-                                <div class="time-badge">12:15 - 14:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-kanban"></i></div>
-                                <div class="activity-details">
-                                    <h4>OPENLABs / Coffee Break</h4>
-                                    <p>Muestra de proyectos y laboratorios CIC</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card hover-modal" onclick="openActivityModal('Control no lineal de vehículos aéreos subactuados con cargas suspendidas', 'Dr. Rogelio Lozano Leal', '14:00 - 15:15', 'Sin Especificar', 'El transporte aéreo de cargas suspendidas constituye un problema relevante de control debido al carácter no lineal y subactuado del sistema, así como a las oscilaciones inducidas por el movimiento de la carga. En esta conferencia se aborda el modelado y control de un vehículo de despegue y aterrizaje vertical planar (PVTOL) que transporta una carga suspendida. El modelo dinámico se obtiene mediante una formulación de Euler–Lagrange.')">
-                                <div class="time-badge">14:00 - 15:15</div>
-                                <div class="activity-icon-box"><i class="bi bi-airplane-engines-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Control no lineal de vehículos aéreos subactuados</h4>
-                                    <p class="small text-muted mb-0"><i class="bi bi-person"></i> Dr. Rogelio Lozano Leal</p>
-                                </div>
-                            </div>
-
-                            <div class="activity-card is-sorpresa hover-modal" onclick="openActivityModal('Mesa Redonda: ¿Está Latinoamérica preparada para la nueva era de la IA y el Supercómputo?', 'Sin especificar', '15:15 - 16:00', 'Sin Datos', '')">
-                                <div class="time-badge">15:15 - 16:00</div>
-                                <div class="activity-icon-box"><i class="bi bi-gift-fill"></i></div>
-                                <div class="activity-details">
-                                    <h4>Mesa Redonda: Latinoamérica e IA</h4>
-                                </div>
-                            </div>
-
-                            <div class="activity-card" style="border-left: 4px solid #ef4444;">
-                                <div class="time-badge" style="background: #fee2e2; color: #dc2626;">16:00 - 18:00</div>
-                                <div class="activity-icon-box" style="color: #dc2626;"><i class="bi bi-music-note-beamed"></i></div>
-                                <div class="activity-details">
-                                    <h4>Banda - Clausura y Reconocimientos</h4>
-                                    <p>Cierre oficial del congreso CORE 2026</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal Detalle de la Conferencia -->
-                    <div class="modal fade" id="activityModal" tabindex="-1" aria-labelledby="activityModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content border-0 shadow-lg rounded-4">
-                                <div class="modal-header text-white" style="background: linear-gradient(135deg, var(--core-color4), var(--core-color5)); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
-                                    <h5 class="modal-title fw-bold" id="activityModalLabel">Detalle de la Conferencia</h5>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body p-4">
-                                    <div class="d-flex align-items-center gap-2 mb-3">
-                                        <span class="badge px-3 py-2 text-dark fw-bold rounded-pill" id="modalTime" style="background-color: var(--core-color3);">--:--</span>
-                                        <span class="badge px-3 py-2 text-white fw-bold rounded-pill" style="background-color: var(--core-color4);">CORE 2026</span>
-                                    </div>
-                                    
-                                    <h3 class="fw-bold mb-3" id="modalTitle" style="color: #112442;">Nombre de la Conferencia</h3>
-
-                                    <div class="card p-3 bg-light border-0 rounded-3 mb-3">
-                                        <div class="row">
-                                            <div class="col-md-6 mb-2 mb-md-0">
-                                                <small class="text-muted d-block">Expositor / Ponente:</small>
-                                                <strong id="modalSpeaker" style="color: #112442;">-</strong>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <small class="text-muted d-block">Contacto / Correo:</small>
-                                                <strong id="modalContact" style="color: var(--core-color4);">-</strong>
-                                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #d9777f !important; background-color: rgba(217, 119, 127, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Inauguración</h6>
                                         </div>
                                     </div>
 
-                                    <div id="modalSummaryContainer">
-                                        <h6 class="fw-bold text-muted mb-2">Resumen de la Presentación:</h6>
-                                        <p class="text-secondary" id="modalSummary" style="line-height: 1.6;">Sin resumen disponible.</p>
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">10:00 - 11:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia AMD</h6>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <button type="button" class="btn btn-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">11:00 - 13:25</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
+                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">13:40 - 14:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">ORACLE</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:15 - 15:30</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Cómputo neuromórfico para IA en el borde</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:30 - 16:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Mi profesor crea videojuegos para ayudarme a aprender matemáticas</h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <script>
-                    // Función para poblar y abrir el modal dinámicamente
-                    function openActivityModal(title, speaker, time, contact, summary) {
-                        document.getElementById('modalTitle').textContent = title;
-                        document.getElementById('modalSpeaker').textContent = speaker || 'Sin especificar';
-                        document.getElementById('modalTime').textContent = time;
-                        document.getElementById('modalContact').textContent = contact || 'Sin datos';
 
-                        const summaryElem = document.getElementById('modalSummary');
-                        const summaryContainer = document.getElementById('modalSummaryContainer');
+                    <!-- ==================== MARTES 27 ==================== -->
+                    <div id="martes" class="day-content" style="display: none;">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
+                                <span><i class="bi bi-clock-history me-2"></i> Martes 27 de Octubre</span>
+                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Avances en el paradigma MML</h6>
+                                        </div>
+                                    </div>
 
-                        if (summary && summary.trim() !== '') {
-                            summaryElem.textContent = summary;
-                            summaryContainer.style.display = 'block';
-                        } else {
-                            summaryElem.textContent = 'No hay resumen proporcionado para esta actividad.';
-                            summaryContainer.style.display = 'block';
-                        }
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
 
-                        // Instanciar y abrir el modal usando Bootstrap 5
-                        const activityModal = new bootstrap.Modal(document.getElementById('activityModal'));
-                        activityModal.show();
-                    }
-                    </script>
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">12:15 - 13:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">El corazón está en tus manos</h6>
+                                        </div>
+                                    </div>
 
-                    
-                    <script>
-                    function switchDay(dayId, btnElement) {
-                        // 1. Ocultar todos los paneles de días
-                        const days = document.querySelectorAll('.day-content');
-                        days.forEach(day => day.classList.remove('active'));
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
+                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
+                                        </div>
+                                    </div>
 
-                        // 2. Desactivar todos los botones widgets
-                        const buttons = document.querySelectorAll('.day-widget-btn');
-                        buttons.forEach(btn => btn.classList.remove('active'));
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">13:15 - 14:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia DELL</h6>
+                                        </div>
+                                    </div>
 
-                        // 3. Activar el día seleccionado
-                        document.getElementById(dayId).classList.add('active');
-                        btnElement.classList.add('active');
-                    }
-                    </script>
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia sobre equidad de género</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia Dr. Barrón</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== MIÉRCOLES 28 ==================== -->
+                    <div id="miercoles" class="day-content" style="display: none;">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
+                                <span><i class="bi bi-clock-history me-2"></i> Miércoles 28 de Octubre</span>
+                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Emilio Bustamante UNAM</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">12:15 - 13:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
+                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">13:15 - 14:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Formando a los ingenieros de la era cuántica</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Mesa redonda: IA ¿Regulación o innovación sin restricciones?</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== JUEVES 29 ==================== -->
+                    <div id="jueves" class="day-content" style="display: none;">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
+                                <span><i class="bi bi-clock-history me-2"></i> Jueves 29 de Octubre</span>
+                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Conferencia Dr. Amadeo</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
+                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f97316 !important; background-color: rgba(249, 115, 22, 0.08);">
+                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6">12:15 - 14:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">OPENLAB</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
+                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Control no lineal de vehículos aéreos</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #60a5fa !important; background-color: rgba(96, 165, 250, 0.1);">
+                                        <span class="badge bg-info text-dark rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Panel de expertos</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #60a5fa !important; background-color: rgba(96, 165, 250, 0.15);">
+                                        <span class="badge bg-info text-dark rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fw-bold mb-0 text-dark">Clausura y reconocimientos</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== TABLA GENERAL ESTILO IMAGEN ==================== -->
+                    <div id="vista-general" class="day-content" style="display: none;">
+                        <div class="table-responsive shadow-sm rounded-4 border bg-white p-2">
+                            <table class="table table-bordered text-center align-middle mb-0 text-white" style="font-size: 0.85rem; font-weight: 600;">
+                                <thead style="background-color: #9381ff; color: #fff;">
+                                    <tr>
+                                        <th style="width: 15%; background-color: #8b71f9;">Horario</th>
+                                        <th style="width: 17%;">Lunes 26</th>
+                                        <th style="width: 17%;">Martes 27</th>
+                                        <th style="width: 17%;">Miércoles 28</th>
+                                        <th style="width: 17%;">Jueves 29</th>
+                                        <th style="width: 17%;">Viernes 30</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">9:00 - 10:00</td>
+                                        <td style="background-color: #e08b90;">Inauguración</td>
+                                        <td style="background-color: #ab73cf;">Avances en el paradigma MML</td>
+                                        <td style="background-color: #ab73cf;">Emilio Bustamante UNAM</td>
+                                        <td style="background-color: #ab73cf;">Conferencia Dr. Amadeo</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">10:00 - 11:00</td>
+                                        <td style="background-color: #ab73cf;">Conferencia AMD</td>
+                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">11:00 - 12:00</td>
+                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">12:00 - 13:00</td>
+                                        <td style="background-color: #ab73cf;">El corazón está en tus manos</td>
+                                        <td style="background-color: #ab73cf;">Conferencia</td>
+                                        <td rowspan="2" style="background-color: #f97316;">OPENLAB</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">13:00 - 14:00</td>
+                                        <td style="background-color: #d97706;">Coffee Break</td>
+                                        <td style="background-color: #d97706;">Coffee Break</td>
+                                        <td style="background-color: #d97706;">Coffee Break</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">14:00 - 15:00</td>
+                                        <td style="background-color: #ab73cf;">ORACLE</td>
+                                        <td style="background-color: #ab73cf;">Conferencia DELL</td>
+                                        <td style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td rowspan="2" style="background-color: #ab73cf;">Control no lineal de vehículos aéreos</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">15:00 - 16:00</td>
+                                        <td style="background-color: #ab73cf;">Cómputo neuromórfico para IA en el borde</td>
+                                        <td style="background-color: #ab73cf;">Conferencia sobre equidad de género</td>
+                                        <td style="background-color: #ab73cf;">Formando a los ingenieros de la era cuántica</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">16:00 - 17:00</td>
+                                        <td style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td style="background-color: #3b82f6;">Exposición papers</td>
+                                        <td style="background-color: #60a5fa;">Panel de expertos</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-dark bg-light fw-bold">17:00 - 18:00</td>
+                                        <td style="background-color: #ab73cf;">Mi profesor crea videojuegos para ayudarme a aprender matemáticas</td>
+                                        <td style="background-color: #ab73cf;">Conferencia Dr. Barrón</td>
+                                        <td style="background-color: #ab73cf;">Mesa redonda: IA ¿Regulación o innovación sin restricciones?</td>
+                                        <td style="background-color: #60a5fa;">Clausura y reconocimientos</td>
+                                        <td style="background-color: #f1f5f9;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <script>
+            function switchDay(dayId, btn) {
+                document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                document.querySelectorAll('.day-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                document.getElementById(dayId).style.display = 'block';
+            }
+            </script>
+                            
+
+                
+  
             </section>
             <!-- End Calendario del Congreso -->
 
@@ -857,7 +553,7 @@
                 <span class="icon-reloj">⏱️</span> 
                 <span class="pill-text">¡Horarios listos!</span>
             </a>
-
+ 
 
         </main>
 
