@@ -1150,12 +1150,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Talleres
+# Talleres & Conferencias
 --------------------------------------------------------------*/
 /* ==========================================
    Banner de Notificación
    ========================================== */
-.taller-notif-banner {
+.taller-notif-banner,
+.conferencia-notif-banner {
   background: linear-gradient(90deg, #112442 0%, #155db1 100%);
   color: #ffffff;
   padding: 10px 0;
@@ -1163,7 +1164,8 @@ section {
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
-.btn-notif-taller {
+.btn-notif-taller,
+.btn-notif-conferencia {
   background-color: #efb810;
   color: #112442;
   font-weight: 700;
@@ -1174,16 +1176,18 @@ section {
   transition: all 0.3s ease;
 }
 
-.btn-notif-taller:hover {
+.btn-notif-taller:hover,
+.btn-notif-conferencia:hover {
   background-color: #ffffff;
   color: #112442;
   transform: translateY(-2px);
 }
 
 /* ==========================================
-   Filtros de Talleres
+   Filtros de Talleres y Conferencias
    ========================================== */
-.filtros-talleres {
+.filtros-talleres,
+.filtros-conferencias {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1209,9 +1213,10 @@ section {
 }
 
 /* ==========================================
-   Tarjetas de Talleres e Imágenes
+   Tarjetas e Imágenes
    ========================================== */
-.taller-card {
+.taller-card,
+.conferencia-card {
   border: 1px solid #e9ecef;
   border-radius: 12px;
   overflow: hidden;
@@ -1219,26 +1224,30 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.taller-card:hover {
+.taller-card:hover,
+.conferencia-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.taller-img-container {
+.taller-img-container,
+.conferencia-img-container {
   position: relative;
   height: 180px;
   background-color: #e2e8f0;
   overflow: hidden;
 }
 
-.taller-img {
+.taller-img,
+.conferencia-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-.taller-card:hover .taller-img {
+.taller-card:hover .taller-img,
+.conferencia-card:hover .conferencia-img {
   transform: scale(1.05);
 }
 
@@ -1255,7 +1264,8 @@ section {
   font-weight: 500;
 }
 
-.hora-badge-taller {
+.hora-badge-taller,
+.hora-badge-conferencia {
   display: inline-block;
   background-color: #eef4ff;
   color: #155db1;
@@ -1265,7 +1275,8 @@ section {
   border-radius: 6px;
 }
 
-.btn-info-taller {
+.btn-info-taller,
+.btn-info-conferencia {
   border-radius: 8px;
   font-weight: 600;
 }
@@ -1274,65 +1285,154 @@ section {
   cursor: pointer;
 }
 
-.clickable-card:hover .btn-info-taller {
+.clickable-card:hover .btn-info-taller,
+.clickable-card:hover .btn-info-conferencia {
   background-color: #0d6efd;
   color: #ffffff;
 }
 
-
-/* Limitar el ancho y reducir los espacios */
-#tallerModal .modal-dialog {
+/* ==========================================
+   Modales (tallerModal & conferenciaModal)
+   ========================================== */
+/* Limitar el ancho, margen superior para la navbar y tamaño compacto */
+#tallerModal .modal-dialog,
+#conferenciaModal .modal-dialog {
   max-width: 580px;
   margin: 1.75rem auto;
+  margin-top: 100px !important; /* Desplaza hacia abajo para despejar la barra de navegación */
 }
 
-/* Reducir el padding interno para que sea más compacto */
-#tallerModal .modal-header {
+/* Reducir el padding interno para mantenerlo compacto */
+#tallerModal .modal-header,
+#tallerModal .modal-footer,
+#conferenciaModal .modal-header,
+#conferenciaModal .modal-footer {
   padding: 0.75rem 1.25rem;
 }
 
-#tallerModal .modal-body {
+#tallerModal .modal-body,
+#conferenciaModal .modal-body {
   padding: 1rem 1.25rem;
   font-size: 0.95rem;
-}
-
-#tallerModal .modal-footer {
-  padding: 0.75rem 1.25rem;
 }
 
 /* Scroll interno opcional para descripciones largas */
-#tallerModal #modalDescripcion {
-  max-height: 180px;
-  overflow-y: auto;
-}
-
-/* Desplaza el modal hacia abajo para despejar la barra de navegación */
-#tallerModal .modal-dialog {
-  max-width: 580px; /* Tamaño compacto */
-  margin-top: 100px !important; /* Ajusta este valor (px) según la altura de tu navbar */
-}
-
-/* Espaciados internos reducidos para mantenerlo compacto */
-#tallerModal .modal-header,
-#tallerModal .modal-footer {
-  padding: 0.75rem 1.25rem;
-}
-
-#tallerModal .modal-body {
-  padding: 1rem 1.25rem;
-  font-size: 0.95rem;
-}
-
-#tallerModal #modalDescripcion {
+#tallerModal #modalDescripcion,
+#conferenciaModal #confModalDescripcion {
   max-height: 160px;
   overflow-y: auto;
 }
 
+/* End Talleres & Conferencias */
 
-/* End Talleres */
+/* ==========================================
+   Modal de Conferencias de 2 Columnas
+   ========================================== */
+#conferenciaModal .modal-dialog {
+  max-width: 850px; /* Modal más ancho para 2 columnas */
+}
 
+/* Badge de Hora Ultra Resaltado */
+.modal-hora-destacada {
+  background: linear-gradient(135deg, #155db1 0%, #112442 100%);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(21, 93, 177, 0.3);
+  border-left: 5px solid #efb810; /* Detalle amarillo brillante */
+}
 
+/* Ajuste de Imagen en columna izquierda */
+#conferenciaModal #confModalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* Muestra toda la imagen sin recortar */
+  object-position: center;
+}
 
+/* Ajustes para pantallas pequeñas (Móviles) */
+@media (max-width: 767.98px) {
+  /* Permite que el contenedor ajuste su altura automáticamente */
+  #conferenciaModal .col-md-5 {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: 280px; /* Limita la altura máxima en móviles */
+    background-color: #0b1325;
+  }
+
+  #conferenciaModal #confModalImg {
+    max-height: 280px;
+    height: auto;
+  }
+}
+
+/* ==========================================
+   Ajustes Universales para Modales (Conferencias & Talleres)
+   ========================================== */
+
+/* 1. Backdrop (Fondo oscuro con efecto difuminado / blur) */
+.modal-backdrop {
+  z-index: 999999998 !important;
+  backdrop-filter: blur(8px) !important; /* Aplica el desenfoque de fondo */
+  -webkit-backdrop-filter: blur(8px) !important; /* Compatibilidad con Safari */
+  background-color: rgba(17, 36, 66, 0.6) !important; /* Tono oscuro suave */
+}
+
+/* 2. Contenedor del Modal por encima del backdrop */
+#conferenciaModal,
+#tallerModal {
+  z-index: 999999999 !important; /* z-index máximo solicitado */
+  padding-right: 0 !important;
+}
+
+/* 3. Centrado perfecto en la ventana (Viewport) */
+#conferenciaModal .modal-dialog,
+#tallerModal .modal-dialog {
+  max-width: 850px;
+  width: 90%;
+  margin: 0 auto !important;
+  min-height: 100vh;
+  display: flex !important;
+  align-items: center !important; /* Centrado vertical */
+  justify-content: center !important; /* Centrado horizontal */
+}
+
+#conferenciaModal .modal-content,
+#tallerModal .modal-content {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 4. Columna de la Imagen: Ajuste de altura e imagen centrada */
+#conferenciaModal .col-md-5 {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b1325;
+}
+
+#conferenciaModal #confModalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badge de Hora Destacada */
+.modal-hora-destacada {
+  background: linear-gradient(135deg, #155db1 0%, #112442 100%);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(21, 93, 177, 0.25);
+  border-left: 5px solid #efb810;
+}
 
 
 /*--------------------------------------------------------------
@@ -2603,4 +2703,60 @@ margin-top: 10px;
   color: #fff;
   border-color: transparent;
   box-shadow: 0 4px 12px rgba(33, 150, 243, 0.25);
+}
+
+
+/* ==========================================
+   Estilos para Patrocinadores (Sponsors)
+   ========================================== */
+.sponsors-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Espacio entre los logos */
+}
+
+/* Aumentamos el tamaño de la tarjeta contenedora */
+.sponsor-item {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 15px 25px; /* Reducimos el padding interno para darle más espacio al logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  width: 240px;  /* Aumentado de 200px a 240px */
+  height: 120px; /* Aumentado de 100px a 120px */
+}
+
+
+.sponsor-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: #155db1;
+}
+
+/* Aumentamos el tamaño máximo permitido para la imagen */
+.sponsor-logo {
+  max-width: 100%;
+  max-height: 80px; /* Aumentado de 50px a 80px para que el logo resalte más */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.sponsor-item:hover .sponsor-logo {
+  filter: grayscale(0%); /* El logo recupera su color al pasar el cursor */
+  opacity: 1;
 }

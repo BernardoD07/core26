@@ -157,398 +157,907 @@
             </section>
             <!-- Fin Ponencias Section -->
 
-            <!-- ======= Calendario del Congreso ======= -->
-            <section id="calendario-congreso" class="calendario-congreso">
-
-            <div class="calendar-dashboard py-4">
-                <!-- Encabezado -->
-                <div class="dashboard-header text-center mb-4">
-                    <h2 class="fw-bold" style="color: #112442; text-transform: uppercase;">CALENDARIO DE CONGRESOS / PAPERS</h2>
-                    <p class="text-muted mb-0"><i class="bi bi-calendar3 me-1"></i> Congreso CORE 2026 — Del 26 al 30 de octubre de 2026</p>
-                    <small class="text-muted fw-semibold">¡Anota la fecha y hora de las conferencias de tu interés!</small>
+            <!-- ======= Sección de Conferencias y Congresos ======= -->
+            <section class="horario-conferencias py-5" id="calendario-congreso">
+            <div class="container">
+                
+                <div class="section-title text-center mb-4">
+                <span class="text-uppercase text-muted fw-bold" style="letter-spacing: 1px;">Congreso CORE 2026</span>
+                <h2 class="fw-bold text-dark">Programa de Conferencias y Eventos</h2>
+                <p class="text-muted">Del 26 al 29 de octubre de 2026</p>
                 </div>
 
-                <!-- Pestañas de Días -->
-                <div class="filtros-talleres mb-4 d-flex justify-content-center gap-2 flex-wrap">
-                    <button class="filtro-btn active" onclick="switchDay('lunes', this)"><i class="bi bi-calendar-day me-1"></i> Lunes 26</button>
-                    <button class="filtro-btn" onclick="switchDay('martes', this)"><i class="bi bi-calendar-day me-1"></i> Martes 27</button>
-                    <button class="filtro-btn" onclick="switchDay('miercoles', this)"><i class="bi bi-calendar-day me-1"></i> Miércoles 28</button>
-                    <button class="filtro-btn" onclick="switchDay('jueves', this)"><i class="bi bi-calendar-day me-1"></i> Jueves 29</button>
-                    <button class="filtro-btn" onclick="switchDay('vista-general', this)"><i class="bi bi-grid-3x3-gap-fill me-1"></i> Tabla General</button>
+                <!-- Filtros por Días -->
+                <div class="filtros-container mb-5">
+                <div class="filtros-conferencias d-flex justify-content-center gap-2 flex-wrap">
+                    <button class="filtro-btn active" data-filtro="todos"><i class="bi bi-grid-3x3-gap"></i> Todos</button>
+                    <button class="filtro-btn" data-filtro="lunes"><i class="bi bi-calendar-day"></i> Lunes 26</button>
+                    <button class="filtro-btn" data-filtro="martes"><i class="bi bi-calendar-day"></i> Martes 27</button>
+                    <button class="filtro-btn" data-filtro="miercoles"><i class="bi bi-calendar-day"></i> Miércoles 28</button>
+                    <button class="filtro-btn" data-filtro="jueves"><i class="bi bi-calendar-day"></i> Jueves 29</button>
+                </div>
                 </div>
 
-                <div class="container" style="max-width: 1000px;">
+                <!-- Lista de Tarjetas Individuales -->
+                <div class="dia-conferencias mb-5">
+                <div class="row g-4">
 
-                    <!-- ==================== LUNES 26 ==================== -->
-                    <div id="lunes" class="day-content active">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
-                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
-                                <span><i class="bi bi-clock-history me-2"></i> Lunes 26 de Octubre</span>
-                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #d9777f !important; background-color: rgba(217, 119, 127, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Inauguración</h6>
-                                        </div>
-                                    </div>
+                    <!-- ================= LUNES 26 ================= -->
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Inauguración"
+                        data-ponente="Comité Organizador CORE 2026"
+                        data-horario="Lunes 26 de Octubre | 09:00 - 09:45"
+                        data-lugar="CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Ceremonia oficial de apertura del Congreso CORE 2026 acompañada de Café, galletas y networking."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Inauguración">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 09:00 - 09:45</span>
+                        <h5 class="card-title fw-bold mt-2">Inauguración / Café & Networking</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Comité Organizador</p>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">10:00 - 11:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia AMD</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Fundamentos de GPU"
+                        data-ponente="Josue García"
+                        data-horario="Lunes 26 de Octubre | 09:45 - 11:00"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/conferencias/amd.png"
+                        data-descripcion="Conferencia Magistral impartida por AMD abordando innovación de hardware, arquitectura y procesamiento de alto rendimiento."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/amd.png" class="card-img-top conferencia-img" alt="Conferencia AMD">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 09:45 - 11:00</span>
+                        <h5 class="card-title fw-bold mt-2">Fundamentos de GPU</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Josue García</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">11:00 - 13:25</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers (1 al 5)</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 1 al 5"
+                        data-ponente="Ponentes de Papers Seleccionados"
+                        data-horario="Lunes 26 de Octubre | 11:00 - 12:40"
+                        data-lugar="CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación de artículos de investigación (Papers 1, 2, 3, 4 y 5) en bloques continuos de 20 minutos."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 1-5">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 11:00 - 12:40</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 1 al 5</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
-                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 24 y 25"
+                        data-ponente="Ponentes de Papers Seleccionados"
+                        data-horario="Lunes 26 de Octubre | 12:40 - 13:20"
+                        data-lugar="CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentaciones científicas de los Papers 24 y 25."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 24-25">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 12:40 - 13:20</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 24 y 25</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">13:40 - 14:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">ORACLE</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="¿Cinco bases de datos o una? El poder de la conversación en la era de la IA"
+                        data-ponente="José Ricardo"
+                        data-horario="Lunes 26 de Octubre | 13:30 - 14:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/conferencias/oracle.png"
+                        data-descripcion="Las aplicaciones de IA necesitan datos relacionados, JSON, información espacial, grafos y representaciones vectoriales. La charla explora cómo Oracle AI Database 26ai reúne estas capacidades para construir aplicaciones inteligentes sin fragmentar la información en múltiples sistemas"
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/oracle.png" class="card-img-top conferencia-img" alt="ORACLE">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 13:30 - 14:15</span>
+                        <h5 class="card-title fw-bold mt-2">Conferencia ORACLE</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> ORACLE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:15 - 15:30</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Cómputo neuromórfico para IA en el borde</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Cómputo neuromórfico para IA en el borde"
+                        data-ponente="Dr. Victor Hugo Ponce Ponce, Dr. Juan Humberto Sossa Azuela"
+                        data-horario="Lunes 26 de Octubre | 14:15 - 15:30"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/conferencias/IA_borde.png"
+                        data-descripcion="Exploración de la arquitectura neuromórfica y sus aplicaciones avanzadas en Inteligencia Artificial Edge."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/IA_borde.png" class="card-img-top conferencia-img" alt="Cómputo Neuromórfico">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 14:15 - 15:30</span>
+                        <h5 class="card-title fw-bold mt-2">Cómputo neuromórfico para IA en el borde</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Dr. Victor Hugo Ponce Ponce, Dr. Juan Humberto Sossa Azuela</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:30 - 16:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Paper 26"
+                        data-ponente="Autor del Paper 26"
+                        data-horario="Lunes 26 de Octubre | 15:30 - 15:50"
+                        data-lugar=" CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación del trabajo de investigación Paper 26."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Paper 26">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i>CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 15:30 - 15:50</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Paper 26</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigador CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Mi profesor crea videojuegos para ayudarme a aprender matemáticas</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-6 col-lg-4 conferencia-item lunes" data-categoria="lunes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Mi profesor crea videojuegos para aprender matemáticas"
+                        data-ponente="Profe. Langolier"
+                        data-horario="Lunes 26 de Octubre | 16:00 - 17:45"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Lunes 26"
+                        data-img="assets/2026-images/conferencias/videojuegos_mate.png"
+                        data-descripcion="Programar juegos usando la IA como herramienta educativa"
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/videojuegos_mate.png" class="card-img-top conferencia-img" alt="Videojuegos Matemáticas">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Lunes 26 | 16:00 - 17:45</span>
+                        <h5 class="card-title fw-bold mt-2">Mi profesor crea videojuegos para aprender matemáticas</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Profe. Langolier</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- ================= MARTES 27 ================= -->
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Avances en el paradigma Minimalist Machine Learning"
+                        data-ponente="Dr. Cornelio Yáñez Márquez"
+                        data-horario="Martes 27 de Octubre | 09:00 - 10:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/conferencias/machine_learning.png"
+                        data-descripcion="Ponencia enfocada en los últimos adelantos sobre el paradigma Minimalist Machine Learning."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/machine_learning.png" class="card-img-top conferencia-img" alt="Minimalist ML">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 09:00 - 10:15</span>
+                        <h5 class="card-title fw-bold mt-2">Avances en el paradigma Minimalist Machine Learning</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Dr. Cornelio Yáñez Márquez</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 6 al 11"
+                        data-ponente="Autores de Papers 6 al 11"
+                        data-horario="Martes 27 de Octubre | 10:15 - 12:15"
+                        data-lugar=" CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Bloque de exposición de los Papers 6, 7, 8, 9, 10 y 11."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 6-11">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 10:15 - 12:15</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 6 al 11</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="“El corazón en tus manos: el dispositivo que entrena para salvar vidas”"
+                        data-ponente="Por confirmar"
+                        data-horario="Martes 27 de Octubre | 12:15 - 13:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Demostración y conferencia sobre tecnología médica innovadora aplicada al entrenamiento de primeros auxilios."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="El corazón en tus manos">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 12:15 - 13:00</span>
+                        <h5 class="card-title fw-bold mt-2">El corazón en tus manos</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Ponente Invitado</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Evolución de los Modelos LLM"
+                        data-ponente="Marco Antonio Ortiz Meneses"
+                        data-horario="Martes 27 de Octubre | 13:15 - 14:00"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/conferencias/dell.png"
+                        data-descripcion="Conferencia empresarial de DELL sobre infraestructura y soluciones tecnológicas."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/dell.png" class="card-img-top conferencia-img" alt="DELL">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 13:15 - 14:00</span>
+                        <h5 class="card-title fw-bold mt-2">Evolución de los Modelos LLM</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Marco Antonio Ortiz Meneses</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Mujeres en STEM: impulsando tu carrera y equidad de género en ingeniería"
+                        data-ponente="Adriana Guzmán, Selene Serrano, Natalia Salas, Diana Aburto"
+                        data-horario="Martes 27 de Octubre | 14:00 - 15:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/conferencias/mujeres.png"
+                        data-descripcion="Mesa de diálogo sobre liderazgo, equidad e inclusión de las mujeres en las áreas de ingeniería y ciencia."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/mujeres.png" class="card-img-top conferencia-img" alt="Equidad de género">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 14:00 - 15:15</span>
+                        <h5 class="card-title fw-bold mt-2">Mujeres en STEM: impulsando tu carrera y equidad de género en ingeniería</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Adriana Guzmán, Selene Serrano, Natalia Salas, Diana Aburto</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Paper 27"
+                        data-ponente="Autor del Paper 27"
+                        data-horario="Martes 27 de Octubre | 15:15 - 15:35"
+                        data-lugar="CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación oral del Paper 27."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Paper 27">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 15:15 - 15:35</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Paper 27</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigador CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item martes" data-categoria="martes">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Inteligencia artificial y transformación social: ¿qué cambia en nuestra forma de pensar, trabajar, crear y producir?"
+                        data-ponente="Profesor Barrón"
+                        data-horario="Martes 27 de Octubre | 15:40 - 17:00"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Martes 27"
+                        data-img="assets/2026-images/conferencias/transformacion_social.png"
+                        data-descripcion="Panel de discusión con expertos en tecnología, inteligencia artificial y computación."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/transformacion_social.png" class="card-img-top conferencia-img" alt="Panel de expertos">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Martes 27 | 15:40 - 17:00</span>
+                        <h5 class="card-title fw-bold mt-2">Inteligencia artificial y transformación social: ¿qué cambia en nuestra forma de pensar, trabajar, crear y producir?</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Profesor Barrón</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- ================= MIÉRCOLES 28 ================= -->
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Hacia una teoría matemática del Go: tácticas, estrategás, influencia y control de territorio"
+                        data-ponente="Emilio Bustamante (UNAM)"
+                        data-horario="Miércoles 28 de Octubre | 09:00 - 10:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/conferencias/matematica_go.png"
+                        data-descripcion="Conferencia Magistral impartida por Emilio Bustamante de la UNAM."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/matematica_go.png" class="card-img-top conferencia-img" alt="Emilio Bustamante UNAM">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 09:00 - 10:15</span>
+                        <h5 class="card-title fw-bold mt-2">Hacia una teoría matemática del Go: tácticas, estrategás, influencia y control de territorio</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Emilio Bustamante</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 12 al 17"
+                        data-ponente="Autores de Papers 12 al 17"
+                        data-horario="Miércoles 28 de Octubre | 10:15 - 12:15"
+                        data-lugar="CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Exposición continua de los Papers 12 a 17."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 12-17">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 10:15 - 12:15</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 12 al 17</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Cantante (Presentación Cultural)"
+                        data-ponente="Artista Invitado"
+                        data-horario="Miércoles 28 de Octubre | 12:15 - 13:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación musical y artística especial a mediodía."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Cantante">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 12:15 - 13:00</span>
+                        <h5 class="card-title fw-bold mt-2">Presentación de Cantante</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Artista Invitado</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 28 y 29"
+                        data-ponente="Autores de Papers 28 y 29"
+                        data-horario="Miércoles 28 de Octubre | 13:15 - 13:55"
+                        data-lugar="CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación orales de los Papers 28 y 29."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 28-29">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 13:15 - 13:55</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 28 y 29</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="De la teoría al laboratorio: formando a los ingenieros de la era cuántica."
+                        data-ponente="Dr. Juan Carlos Martínez García"
+                        data-horario="Miércoles 28 de Octubre | 14:00 - 15:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/conferencias/era_cuantica.png"
+                        data-descripcion="Conoce una iniciativa de formación práctica en ingeniería cuántica y plataformas para explorar control cuántico, criptografía BB84, sistemas de dos qubits y óptica cuántica"
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/era_cuantica.png" class="card-img-top conferencia-img" alt="Era cuántica">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i>Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 14:00 - 15:15</span>
+                        <h5 class="card-title fw-bold mt-2">De la teoría al laboratorio: formando a los ingenieros de la era cuántica</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Dr. Juan Carlos Martínez García</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Paper 30"
+                        data-ponente="Autor del Paper 30"
+                        data-horario="Miércoles 28 de Octubre | 15:15 - 15:35"
+                        data-lugar="CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación del Paper 30."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Paper 30">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 15:15 - 15:35</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Paper 30</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigador CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item miercoles" data-categoria="miercoles">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="IEEE - Concurso de disfraces"
+                        data-ponente="Rama Estudiantil IEEE CIC"
+                        data-horario="Miércoles 28 de Octubre | 15:40 - 17:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Miércoles 28"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Evento recreativo y de convivencia organizado por IEEE."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Concurso de disfraces">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i>CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Miércoles 28 | 15:40 - 17:00</span>
+                        <h5 class="card-title fw-bold mt-2">IEEE - Concurso de disfraces</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Rama IEEE CIC</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- ================= JUEVES 29 ================= -->
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Profesor Amadeo"
+                        data-ponente="Profesor Amadeo"
+                        data-horario="Jueves 29 de Octubre | 09:00 - 10:15"
+                        data-lugar="CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Conferencia Magistral impartida por el Profesor Amadeo."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Profesor Amadeo">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 09:00 - 10:15</span>
+                        <h5 class="card-title fw-bold mt-2">Conferencia Profesor Amadeo</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Prof. Amadeo</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Exposición de Papers 18 al 23"
+                        data-ponente="Autores de Papers 18 al 23"
+                        data-horario="Jueves 29 de Octubre | 10:15 - 12:15"
+                        data-lugar="CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Bloque de exposición oral de Papers 18 a 23."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Papers 18-23">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 10:15 - 12:15</span>
+                        <h5 class="card-title fw-bold mt-2">Exposición de Papers 18 al 23</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Investigadores CORE</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="OPENLAB / Coffee Break"
+                        data-ponente="Comité CORE & Laboratorios"
+                        data-horario="Jueves 29 de Octubre | 12:15 - 14:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Sesión de puertas abiertas en laboratorios (OPENLAB) con café y receso (1 hr 45 min)."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="OPENLAB">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 12:15 - 14:00</span>
+                        <h5 class="card-title fw-bold mt-2">OPENLAB / Coffee Break</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Laboratorios CIC</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Control no lineal de vehículos aéreos subactuados con cargas suspendidas: del modelado energético a la estabilización."
+                        data-ponente="Dr. Rogelio Lozano Leal"
+                        data-horario="Jueves 29 de Octubre | 14:00 - 15:15"
+                        data-lugar="Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/conferencias/control_no_lineal.png"
+                        data-descripcion="Una aproximación al modelo y control de un vehículo aéreo con carga suspendida, orientada al posicionamiento del vehículo y a la atenuación de las oscilaciones de la carga"
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/conferencias/control_no_lineal.png" class="card-img-top conferencia-img" alt="Control no lineal drones">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> Sala AGA 'Adolfo Guzmán Arenas' - CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 14:00 - 15:15</span>
+                        <h5 class="card-title fw-bold mt-2">Control no lineal de vehículos aéreos subactuados con cargas suspendidas: del modelado energético a la estabilización</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Dr. Rogelio Lozano Leal</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="AInfluencer -"
+                        data-ponente="Ponente Invitado"
+                        data-horario="Jueves 29 de Octubre | 15:15 - 16:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Sesión sobre influencers generados por IA, creación de contenido sintetizado y nuevos medios."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="AInfluencer">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 15:15 - 16:00</span>
+                        <h5 class="card-title fw-bold mt-2">AInfluencer</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Ponente Invitado</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 conferencia-item jueves" data-categoria="jueves">
+                    <div class="card conferencia-card h-100 shadow-sm clickable-card" 
+                        data-bs-toggle="modal" data-bs-target="#conferenciaModal"
+                        data-titulo="Cantante Claudia Suleima — Clausura y reconocimientos"
+                        data-ponente="Claudia Suleima & Comité Organizador"
+                        data-horario="Jueves 29 de Octubre | 16:00 - 18:00"
+                        data-lugar="CIC IPN"
+                        data-categoria="Jueves 29"
+                        data-img="assets/2026-images/Sorpresas.jfif"
+                        data-descripcion="Presentación musical de cierre a cargo de Claudia Suleima seguida de la ceremonia oficial de clausura y reconocimientos del Congreso CORE 2026."
+                        data-registro="#">
+                        <div class="conferencia-img-container">
+                        <img src="assets/2026-images/Sorpresas.jfif" class="card-img-top conferencia-img" alt="Clausura Claudia Suleima">
+                        <span class="badge-lugar"><i class="bi bi-geo-alt-fill"></i> CIC IPN</span>
+                        </div>
+                        <div class="card-body">
+                        <span class="hora-badge-conferencia mb-2"><i class="bi bi-clock me-1"></i> Jueves 29 | 16:00 - 18:00</span>
+                        <h5 class="card-title fw-bold mt-2">Claudia Suleima — Clausura</h5>
+                        <p class="card-text text-muted small mb-1"><i class="bi bi-person-fill me-1"></i> <strong>Participa:</strong> Claudia Suleima / Comité</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                        <button type="button" class="btn btn-outline-primary btn-sm w-100 btn-info-conferencia">
+                            <i class="bi bi-info-circle me-1"></i> Más información
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                </div>
+
+            </div>
+            </section>
+
+            <!-- ================= MODAL EN 2 COLUMNAS (FOTO IZQ | DATOS DER) ================= -->
+            <div class="modal fade" id="conferenciaModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content overflow-hidden border-0 shadow-lg" style="border-radius: 16px;">
+                
+                <div class="modal-header border-0 pb-0 position-relative z-3">
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body p-0">
+                    <div class="row g-0 align-items-stretch">
+                    
+                    <!-- Columna Izquierda: Imagen Completa -->
+                    <div class="col-md-5 bg-dark d-flex align-items-center justify-content-center position-relative min-vh-25">
+                        <img src="" id="confModalImg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Conferencia Image">
+                        <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-50 text-white">
+                        <span class="badge bg-primary" id="confModalCategoria">Categoría</span>
                         </div>
                     </div>
 
-                    <!-- ==================== MARTES 27 ==================== -->
-                    <div id="martes" class="day-content" style="display: none;">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
-                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
-                                <span><i class="bi bi-clock-history me-2"></i> Martes 27 de Octubre</span>
-                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Avances en el paradigma MML</h6>
-                                        </div>
-                                    </div>
+                    <!-- Columna Derecha: Información de la Conferencia -->
+                    <div class="col-md-7 p-4 d-flex flex-column justify-content-between bg-white">
+                        <div>
+                        <h4 class="modal-title fw-bold text-dark mb-3" id="confModalTitulo">Título de la Conferencia</h4>
+                        
+                        <!-- Badge de Hora SÚPER Resaltada -->
+                        <div class="modal-hora-destacada mb-3">
+                            <i class="bi bi-clock-fill me-2 fs-5"></i>
+                            <span id="confModalHorario" class="fw-bold fs-6"></span>
+                        </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers (6 al 11)</h6>
-                                        </div>
-                                    </div>
+                        <p class="mb-2 text-secondary">
+                            <i class="bi bi-person-fill text-primary me-2 fs-5"></i>
+                            <strong>Participa / Ponente:</strong> <br><span id="confModalPonente" class="text-dark fw-semibold ms-4"></span>
+                        </p>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">12:15 - 13:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">El corazón está en tus manos</h6>
-                                        </div>
-                                    </div>
+                        <p class="mb-3 text-secondary">
+                            <i class="bi bi-geo-alt-fill text-danger me-2 fs-5"></i>
+                            <strong>Lugar:</strong> <span id="confModalLugar" class="text-dark fw-semibold"></span>
+                        </p>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
-                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
-                                        </div>
-                                    </div>
+                        <hr class="my-3">
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">13:15 - 14:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia DELL</h6>
-                                        </div>
-                                    </div>
+                        <h6 class="fw-bold text-dark mb-2"><i class="bi bi-text-paragraph me-1"></i> Resumen / Descripción:</h6>
+                        <div class="text-muted small lh-base" id="confModalDescripcion" style="max-height: 180px; overflow-y: auto;"></div>
+                        </div>
 
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia sobre equidad de género</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia Dr. Barrón</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- Botones del Modal -->
+                        <div class="pt-4 d-flex justify-content-between align-items-center border-top mt-3">
+                        <button type="button" class="btn btn-outline-secondary btn-sm px-3 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                        
                         </div>
                     </div>
 
-                    <!-- ==================== MIÉRCOLES 28 ==================== -->
-                    <div id="miercoles" class="day-content" style="display: none;">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
-                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
-                                <span><i class="bi bi-clock-history me-2"></i> Miércoles 28 de Octubre</span>
-                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Emilio Bustamante UNAM</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers (12 al 17)</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">12:15 - 13:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f59e0b !important; background-color: rgba(245, 158, 11, 0.1);">
-                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6"><i class="bi bi-cup-hot me-1"></i> Receso</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Coffee Break</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">13:15 - 14:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Formando a los ingenieros de la era cuántica</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Mesa redonda: IA ¿Regulación o innovación sin restricciones?</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- ==================== JUEVES 29 ==================== -->
-                    <div id="jueves" class="day-content" style="display: none;">
-                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
-                            <div class="card-header text-white fw-bold py-3 px-4 d-flex justify-content-between align-items-center" style="background: #112442;">
-                                <span><i class="bi bi-clock-history me-2"></i> Jueves 29 de Octubre</span>
-                                <span class="badge bg-light text-dark rounded-pill">Core 2026</span>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">09:00 - 10:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Conferencia Dr. Amadeo</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #3b82f6 !important; background-color: rgba(59, 130, 246, 0.08);">
-                                        <span class="badge bg-primary rounded-pill me-3 px-3 py-2 fs-6">10:15 - 12:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-primary">Exposición papers (18 al 23)</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #f97316 !important; background-color: rgba(249, 115, 22, 0.08);">
-                                        <span class="badge bg-warning text-dark rounded-pill me-3 px-3 py-2 fs-6">12:15 - 14:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">OPENLAB</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #ab73cf !important; background-color: rgba(171, 115, 207, 0.08);">
-                                        <span class="badge bg-secondary rounded-pill me-3 px-3 py-2 fs-6">14:00 - 15:15</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Control no lineal de vehículos aéreos</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #60a5fa !important; background-color: rgba(96, 165, 250, 0.1);">
-                                        <span class="badge bg-info text-dark rounded-pill me-3 px-3 py-2 fs-6">15:15 - 16:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Panel de expertos</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item d-flex align-items-center p-3 border-start border-4" style="border-color: #60a5fa !important; background-color: rgba(96, 165, 250, 0.15);">
-                                        <span class="badge bg-info text-dark rounded-pill me-3 px-3 py-2 fs-6">16:00 - 18:00</span>
-                                        <div class="flex-grow-1">
-                                            <h6 class="fw-bold mb-0 text-dark">Clausura y reconocimientos</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ==================== TABLA GENERAL ESTILO IMAGEN ==================== -->
-                    <div id="vista-general" class="day-content" style="display: none;">
-                        <div class="table-responsive shadow-sm rounded-4 border bg-white p-2">
-                            <table class="table table-bordered text-center align-middle mb-0 text-white" style="font-size: 0.85rem; font-weight: 600;">
-                                <thead style="background-color: #9381ff; color: #fff;">
-                                    <tr>
-                                        <th style="width: 15%; background-color: #8b71f9;">Horario</th>
-                                        <th style="width: 17%;">Lunes 26</th>
-                                        <th style="width: 17%;">Martes 27</th>
-                                        <th style="width: 17%;">Miércoles 28</th>
-                                        <th style="width: 17%;">Jueves 29</th>
-                                        <th style="width: 17%;">Viernes 30</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">9:00 - 10:00</td>
-                                        <td style="background-color: #e08b90;">Inauguración</td>
-                                        <td style="background-color: #ab73cf;">Avances en el paradigma MML</td>
-                                        <td style="background-color: #ab73cf;">Emilio Bustamante UNAM</td>
-                                        <td style="background-color: #ab73cf;">Conferencia Dr. Amadeo</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">10:00 - 11:00</td>
-                                        <td style="background-color: #ab73cf;">Conferencia AMD</td>
-                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">11:00 - 12:00</td>
-                                        <td rowspan="2" style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">12:00 - 13:00</td>
-                                        <td style="background-color: #ab73cf;">El corazón está en tus manos</td>
-                                        <td style="background-color: #ab73cf;">Conferencia</td>
-                                        <td rowspan="2" style="background-color: #f97316;">OPENLAB</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">13:00 - 14:00</td>
-                                        <td style="background-color: #d97706;">Coffee Break</td>
-                                        <td style="background-color: #d97706;">Coffee Break</td>
-                                        <td style="background-color: #d97706;">Coffee Break</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">14:00 - 15:00</td>
-                                        <td style="background-color: #ab73cf;">ORACLE</td>
-                                        <td style="background-color: #ab73cf;">Conferencia DELL</td>
-                                        <td style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td rowspan="2" style="background-color: #ab73cf;">Control no lineal de vehículos aéreos</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">15:00 - 16:00</td>
-                                        <td style="background-color: #ab73cf;">Cómputo neuromórfico para IA en el borde</td>
-                                        <td style="background-color: #ab73cf;">Conferencia sobre equidad de género</td>
-                                        <td style="background-color: #ab73cf;">Formando a los ingenieros de la era cuántica</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">16:00 - 17:00</td>
-                                        <td style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td style="background-color: #3b82f6;">Exposición papers</td>
-                                        <td style="background-color: #60a5fa;">Panel de expertos</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-dark bg-light fw-bold">17:00 - 18:00</td>
-                                        <td style="background-color: #ab73cf;">Mi profesor crea videojuegos para ayudarme a aprender matemáticas</td>
-                                        <td style="background-color: #ab73cf;">Conferencia Dr. Barrón</td>
-                                        <td style="background-color: #ab73cf;">Mesa redonda: IA ¿Regulación o innovación sin restricciones?</td>
-                                        <td style="background-color: #60a5fa;">Clausura y reconocimientos</td>
-                                        <td style="background-color: #f1f5f9;"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                </div>
 
                 </div>
             </div>
+            </div>
 
-            <script>
-            function switchDay(dayId, btn) {
-                document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                document.querySelectorAll('.day-content').forEach(content => {
-                    content.style.display = 'none';
-                });
-                document.getElementById(dayId).style.display = 'block';
-            }
-            </script>
-                            
-
+            
+            <!-- Modal EXCLUSIVO para Conferencias -->
+            <div class="modal fade" id="conferenciaModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="confModalTitulo">Título de la Conferencia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
                 
-  
-            </section>
-            <!-- End Calendario del Congreso -->
+                <div class="modal-body">
+                    <span class="badge bg-primary mb-2" id="confModalCategoria">Categoría</span>
+                    <p class="mb-1"><strong><i class="bi bi-person-fill me-1"></i> Participa / Ponente:</strong> <span id="confModalPonente"></span></p>
+                    <p class="mb-1"><strong><i class="bi bi-clock-fill me-1"></i> Horario:</strong> <span id="confModalHorario"></span></p>
+                    <p class="mb-2"><strong><i class="bi bi-geo-alt-fill me-1"></i> Lugar:</strong> <span id="confModalLugar"></span></p>
+                    <hr class="my-2">
+                    <h6 class="fw-bold mb-1">Resumen / Descripción:</h6>
+                    <div class="text-muted" id="confModalDescripcion"></div>
+                </div>
 
-              <!-- NOTIFICACIÓN FLOTANTE / PÍLDORA ROJA -->
+                </div>
+            </div>
+            </div>
+
+
+            <!-- NOTIFICACIÓN FLOTANTE / PÍLDORA ROJA -->
             <a href="#calendario-congreso" class="notificacion-cuenta" id="notif-cuenta">
                 <span class="icon-reloj">⏱️</span> 
                 <span class="pill-text">¡Horarios listos!</span>
@@ -596,7 +1105,50 @@
         });
 
     </script>
-    
+
+    <!-- ================= SCRIPT PARA FILTROS Y DATOS DEL MODAL ================= -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. Filtros por Día
+        const filterButtons = document.querySelectorAll("#calendario-congreso .filtro-btn");
+        const conferenceItems = document.querySelectorAll("#calendario-congreso .conferencia-item");
+
+        filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            const filterValue = this.getAttribute("data-filtro");
+
+            conferenceItems.forEach(item => {
+            if (filterValue === "todos" || item.getAttribute("data-categoria") === filterValue) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+            });
+        });
+        });
+
+        // 2. Transición y Carga de Datos en el Modal de 2 Columnas
+        const conferenciaModal = document.getElementById('conferenciaModal');
+        if (conferenciaModal) {
+        conferenciaModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            
+            document.getElementById('confModalTitulo').textContent = button.getAttribute('data-titulo');
+            document.getElementById('confModalPonente').textContent = button.getAttribute('data-ponente');
+            document.getElementById('confModalHorario').textContent = button.getAttribute('data-horario');
+            document.getElementById('confModalLugar').textContent = button.getAttribute('data-lugar');
+            document.getElementById('confModalCategoria').textContent = button.getAttribute('data-categoria');
+            document.getElementById('confModalDescripcion').innerHTML = button.getAttribute('data-descripcion');
+            document.getElementById('confModalImg').setAttribute('src', button.getAttribute('data-img'));
+        });
+        }
+    });
+    </script>
+
+
     
 
 </html>
