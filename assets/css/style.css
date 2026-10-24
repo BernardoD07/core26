@@ -2760,3 +2760,61 @@ margin-top: 10px;
   filter: grayscale(0%); /* El logo recupera su color al pasar el cursor */
   opacity: 1;
 }
+
+/* 1. Forzar que el modal y sus elementos internos reciban clics siempre */
+#papersModal {
+  z-index: 999999999 !important;
+  pointer-events: auto !important;
+}
+
+#papersModal .modal-dialog {
+  z-index: 1000000000 !important;
+  pointer-events: auto !important;
+}
+
+/* 2. Asegurar que los botones del carrusel y de descarga sean clickeables */
+#papersModalCarousel .carousel-control-prev,
+#papersModalCarousel .carousel-control-next,
+#papersModalCarousel .btn {
+  z-index: 1000000001 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Contenedor del carrusel en el modal de papers */
+#papersModal .carousel-item {
+  height: 450px; /* Altura fija para que la galería sea uniforme */
+  background-color: #0b1325;
+}
+
+/* Forzar que la imagen cubra todo el espacio de la columna */
+#papersModal .carousel-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Llena todo el espacio recortando los excesos proporcionalmente */
+  object-position: center !important;
+}
+
+/* Botón de descarga flotante y elegante sobre la imagen */
+.paper-download-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(17, 36, 66, 0.85);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.paper-download-btn:hover {
+  background: #155db1;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
