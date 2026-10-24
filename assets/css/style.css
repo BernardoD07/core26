@@ -2761,6 +2761,9 @@ margin-top: 10px;
   opacity: 1;
 }
 
+
+/* Modal papers*/
+
 /* 1. Forzar que el modal y sus elementos internos reciban clics siempre */
 #papersModal {
   z-index: 999999999 !important;
@@ -2781,21 +2784,22 @@ margin-top: 10px;
   cursor: pointer !important;
 }
 
-/* Contenedor del carrusel en el modal de papers */
-#papersModal .carousel-item {
-  height: 450px; /* Altura fija para que la galería sea uniforme */
+/* Altura fija únicamente para los elementos slide del carrusel de papers */
+#papersModal #papersModalCarousel .carousel-item {
+  height: 450px;
   background-color: #0b1325;
+  position: relative;
 }
 
-/* Forzar que la imagen cubra todo el espacio de la columna */
-#papersModal .carousel-item img {
+/* Forzar que la imagen cubra todo el espacio pero aplicada EXCLUSIVAMENTE a la etiqueta img dentro del carrusel de papers */
+#papersModal #papersModalCarousel .carousel-item > img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important; /* Llena todo el espacio recortando los excesos proporcionalmente */
+  object-fit: cover !important;
   object-position: center !important;
 }
 
-/* Botón de descarga flotante y elegante sobre la imagen */
+/* Botón de descarga flotante */
 .paper-download-btn {
   position: absolute;
   bottom: 20px;
