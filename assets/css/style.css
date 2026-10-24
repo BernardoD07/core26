@@ -2762,7 +2762,9 @@ margin-top: 10px;
 }
 
 
-/* Modal papers*/
+/* ==========================================
+   Estilos Optimizados para Modal de Papers
+   ========================================== */
 
 /* 1. Forzar que el modal y sus elementos internos reciban clics siempre */
 #papersModal {
@@ -2784,14 +2786,14 @@ margin-top: 10px;
   cursor: pointer !important;
 }
 
-/* Altura fija únicamente para los elementos slide del carrusel de papers */
+/* 3. Altura fija únicamente para los elementos slide del carrusel de papers */
 #papersModal #papersModalCarousel .carousel-item {
-  height: 450px;
-  background-color: #0b1325;
-  position: relative;
+  height: 450px !important;
+  background-color: #0b1325 !important;
+  position: relative !important;
 }
 
-/* Forzar que la imagen cubra todo el espacio pero aplicada EXCLUSIVAMENTE a la etiqueta img dentro del carrusel de papers */
+/* 4. Forzar que la imagen cubra todo el espacio sin excepciones */
 #papersModal #papersModalCarousel .carousel-item > img {
   width: 100% !important;
   height: 100% !important;
@@ -2799,26 +2801,26 @@ margin-top: 10px;
   object-position: center !important;
 }
 
-/* Botón de descarga flotante */
+/* 5. Botón de descarga flotante */
 .paper-download-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(17, 36, 66, 0.85);
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  backdrop-filter: blur(4px);
-  z-index: 10;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: absolute !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background: rgba(17, 36, 66, 0.85) !important;
+  color: #ffffff !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  backdrop-filter: blur(4px) !important;
+  z-index: 10 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
 }
 
 .paper-download-btn:hover {
-  background: #155db1;
-  color: #ffffff;
-  transform: translateY(-2px);
+  background: #155db1 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
